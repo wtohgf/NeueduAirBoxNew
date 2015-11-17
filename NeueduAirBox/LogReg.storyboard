@@ -4,33 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--注册登录-->
-        <scene sceneID="3ga-KO-k0Y">
-            <objects>
-                <tableViewController id="cgT-RO-rn1" customClass="NEUABLogRegTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="M4s-ii-hsN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Dif-DI-Yhk">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dif-DI-Yhk" id="Rbo-pI-UBg">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="cgT-RO-rn1" id="ie4-E1-mmN"/>
-                            <outlet property="delegate" destination="cgT-RO-rn1" id="XzB-tT-L0Q"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="注册登录" id="7ev-OI-7Po"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T9r-kA-yy7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="562" y="283"/>
-        </scene>
         <!--Base View Controller-->
         <scene sceneID="sjj-Rh-3yD">
             <objects>
@@ -40,12 +13,52 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="cgT-RO-rn1" kind="relationship" relationship="rootViewController" id="0nT-4q-FQE"/>
+                        <segue destination="TdS-sJ-Kh4" kind="relationship" relationship="rootViewController" id="WrM-Ej-eZe"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lic-t7-4pC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-258" y="282"/>
+        </scene>
+        <!--Log Reg View Controller-->
+        <scene sceneID="yOk-0B-wtS">
+            <objects>
+                <viewController id="TdS-sJ-Kh4" customClass="NEUABLogRegViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dp7-EM-0YX"/>
+                        <viewControllerLayoutGuide type="bottom" id="WUt-hg-Eyh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yAR-Ua-Lcl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ul9-O6-iNC"/>
+                    <connections>
+                        <segue destination="GGe-2s-1NI" kind="show" identifier="toResign" id="CAu-Wy-FDS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yX3-Ua-K1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="536" y="274"/>
+        </scene>
+        <!--Resign-->
+        <scene sceneID="exu-GL-JhB">
+            <objects>
+                <viewController title="Resign" id="GGe-2s-1NI" customClass="NEUABResignViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s5j-Tg-JUC"/>
+                        <viewControllerLayoutGuide type="bottom" id="HWm-vY-yuc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qMW-zJ-ghn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yoB-Ds-rwo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1159" y="257"/>
         </scene>
     </scenes>
 </document>

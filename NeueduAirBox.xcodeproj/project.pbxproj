@@ -21,7 +21,10 @@
 		1D8C410E1BF9CFD3006FA630 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C410D1BF9CFD3006FA630 /* Setting.storyboard */; };
 		1D8C41101BF9CFE0006FA630 /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C410F1BF9CFE0006FA630 /* Other.storyboard */; };
 		1D8C41131BF9D78A006FA630 /* NEUABBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C41121BF9D78A006FA630 /* NEUABBaseViewController.m */; };
-		1D8C41161BF9D990006FA630 /* NEUABLogRegTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C41151BF9D990006FA630 /* NEUABLogRegTableViewController.m */; };
+		C75050FC1BFACEA3009B301F /* NEUABLogRegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C75050F91BFACEA3009B301F /* NEUABLogRegViewController.m */; };
+		C75050FD1BFACEA3009B301F /* NEUABResignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C75050FB1BFACEA3009B301F /* NEUABResignViewController.m */; };
+		C75051031BFACF32009B301F /* MBProgressHUD+MoreExtentions.m in Sources */ = {isa = PBXBuildFile; fileRef = C75051021BFACF32009B301F /* MBProgressHUD+MoreExtentions.m */; };
+		C75051071BFACFF6009B301F /* ACSimpleKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = C75051061BFACFF6009B301F /* ACSimpleKeychain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +58,16 @@
 		1D8C410F1BF9CFE0006FA630 /* Other.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Other.storyboard; sourceTree = "<group>"; };
 		1D8C41111BF9D78A006FA630 /* NEUABBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABBaseViewController.h; sourceTree = "<group>"; };
 		1D8C41121BF9D78A006FA630 /* NEUABBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABBaseViewController.m; sourceTree = "<group>"; };
-		1D8C41141BF9D990006FA630 /* NEUABLogRegTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABLogRegTableViewController.h; sourceTree = "<group>"; };
-		1D8C41151BF9D990006FA630 /* NEUABLogRegTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABLogRegTableViewController.m; sourceTree = "<group>"; };
 		32417D847B8495B3B5C73AFB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		50244E1DFCC68305C741E490 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C75050F81BFACEA3009B301F /* NEUABLogRegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABLogRegViewController.h; sourceTree = "<group>"; };
+		C75050F91BFACEA3009B301F /* NEUABLogRegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABLogRegViewController.m; sourceTree = "<group>"; };
+		C75050FA1BFACEA3009B301F /* NEUABResignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABResignViewController.h; sourceTree = "<group>"; };
+		C75050FB1BFACEA3009B301F /* NEUABResignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABResignViewController.m; sourceTree = "<group>"; };
+		C75051011BFACF2A009B301F /* MBProgressHUD+MoreExtentions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MoreExtentions.h"; sourceTree = "<group>"; };
+		C75051021BFACF32009B301F /* MBProgressHUD+MoreExtentions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MoreExtentions.m"; sourceTree = "<group>"; };
+		C75051051BFACFF6009B301F /* ACSimpleKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSimpleKeychain.h; sourceTree = "<group>"; };
+		C75051061BFACFF6009B301F /* ACSimpleKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACSimpleKeychain.m; sourceTree = "<group>"; };
 		F2B2A589E21765D8302DA14C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,6 +113,7 @@
 		1D8C40D01BF9AE5D006FA630 /* NeueduAirBox */ = {
 			isa = PBXGroup;
 			children = (
+				C75051001BFACF07009B301F /* Other */,
 				1D8C41001BF9C82C006FA630 /* Common */,
 				1D8C40FF1BF9C81B006FA630 /* Views */,
 				1D8C40FE1BF9C815006FA630 /* Models */,
@@ -172,8 +182,6 @@
 		1D8C41001BF9C82C006FA630 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				1D8C40D51BF9AE5D006FA630 /* AppDelegate.h */,
-				1D8C40D61BF9AE5D006FA630 /* AppDelegate.m */,
 				1D8C41111BF9D78A006FA630 /* NEUABBaseViewController.h */,
 				1D8C41121BF9D78A006FA630 /* NEUABBaseViewController.m */,
 			);
@@ -193,8 +201,10 @@
 			isa = PBXGroup;
 			children = (
 				1D8C41071BF9CF8F006FA630 /* LogReg.storyboard */,
-				1D8C41141BF9D990006FA630 /* NEUABLogRegTableViewController.h */,
-				1D8C41151BF9D990006FA630 /* NEUABLogRegTableViewController.m */,
+				C75050F81BFACEA3009B301F /* NEUABLogRegViewController.h */,
+				C75050F91BFACEA3009B301F /* NEUABLogRegViewController.m */,
+				C75050FA1BFACEA3009B301F /* NEUABResignViewController.h */,
+				C75050FB1BFACEA3009B301F /* NEUABResignViewController.m */,
 			);
 			name = "注册登录";
 			sourceTree = "<group>";
@@ -246,6 +256,43 @@
 				F2B2A589E21765D8302DA14C /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C75050FE1BFACEE8009B301F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C75051011BFACF2A009B301F /* MBProgressHUD+MoreExtentions.h */,
+				C75051021BFACF32009B301F /* MBProgressHUD+MoreExtentions.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		C75050FF1BFACEF7009B301F /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				C75051041BFACFDB009B301F /* 保存密码 */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		C75051001BFACF07009B301F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				1D8C40D51BF9AE5D006FA630 /* AppDelegate.h */,
+				1D8C40D61BF9AE5D006FA630 /* AppDelegate.m */,
+				C75050FE1BFACEE8009B301F /* Category */,
+				C75050FF1BFACEF7009B301F /* Tool */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		C75051041BFACFDB009B301F /* 保存密码 */ = {
+			isa = PBXGroup;
+			children = (
+				C75051051BFACFF6009B301F /* ACSimpleKeychain.h */,
+				C75051061BFACFF6009B301F /* ACSimpleKeychain.m */,
+			);
+			name = "保存密码";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,10 +434,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D8C41161BF9D990006FA630 /* NEUABLogRegTableViewController.m in Sources */,
+				C75051071BFACFF6009B301F /* ACSimpleKeychain.m in Sources */,
+				C75050FC1BFACEA3009B301F /* NEUABLogRegViewController.m in Sources */,
 				1D8C41131BF9D78A006FA630 /* NEUABBaseViewController.m in Sources */,
 				1D8C40D71BF9AE5D006FA630 /* AppDelegate.m in Sources */,
+				C75050FD1BFACEA3009B301F /* NEUABResignViewController.m in Sources */,
 				1D8C40DA1BF9AE5D006FA630 /* NeueduAirBox.xcdatamodeld in Sources */,
+				C75051031BFACF32009B301F /* MBProgressHUD+MoreExtentions.m in Sources */,
 				1D8C40FC1BF9C2A2006FA630 /* NEUABHomeViewController.m in Sources */,
 				1D8C40D41BF9AE5D006FA630 /* main.m in Sources */,
 			);

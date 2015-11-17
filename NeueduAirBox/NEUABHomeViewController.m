@@ -66,7 +66,7 @@
     [sbName replaceOccurrencesOfString:@"Nav" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, sbName.length)];
     
     UIStoryboard* sb = [UIStoryboard storyboardWithName:sbName bundle:nil];
-    
+
     UINavigationController* nav = [sb instantiateViewControllerWithIdentifier:_MenuDict[[NSString stringWithFormat:@"%li", self.viewController.currentTag]]];
     
     [self presentViewController:nav animated:YES completion:nil];

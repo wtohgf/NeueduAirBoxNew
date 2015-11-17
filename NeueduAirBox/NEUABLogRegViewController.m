@@ -1,0 +1,160 @@
+//
+//  NEUABLogRegViewController.m
+//  NeueduAirBox
+//
+//  Created by neuedu on 15/11/16.
+//  Copyright (c) 2015年 hegf. All rights reserved.
+//
+
+#import "NEUABLogRegViewController.h"
+#import "ACSimpleKeychain.h"
+#import <MBProgressHUD.h>
+#import "MBProgressHUD+MoreExtentions.h"
+
+@interface NEUABLogRegViewController ()
+@property (weak, nonatomic)UIButton *storepwd;
+@end
+
+@implementation NEUABLogRegViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backPage:)];
+     [self setSubViews];
+}
+#pragma mark 登录注册
+-(void)setSubViews{
+    UILabel * account = [[UILabel alloc]init];
+    account.frame = CGRectMake(leftMargin, upMargin+100.f, labelWidth, labelHeight);
+    account.text = @"手机号";
+    account.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:account];
+    
+    UITextField *accountTextFiled = [[UITextField alloc]init];
+    _accountTextField = accountTextFiled;
+    accountTextFiled.frame = CGRectMake(leftMargin+labelWidth+kMargin, upMargin+100.f, [UIScreen mainScreen].bounds.size.width-leftMargin-rightMargin-labelWidth-kMargin, labelHeight);
+    
+    [self.view addSubview:accountTextFiled];
+    accountTextFiled.textColor = [UIColor blueColor];
+    
+    //输入字符为数字
+    accountTextFiled.keyboardType=UIKeyboardTypeNumberPad;
+    
+    accountTextFiled.placeholder=@"请输入手机号";
+    accountTextFiled.borderStyle=UITextBorderStyleRoundedRect;
+    
+    UILabel * password  = [[UILabel alloc]init];
+    password.frame = CGRectMake(leftMargin, upMargin+labelHeight+100.f, labelWidth, labelHeight+2*kMargin);
+    password.text= @"密码";
+    password.textAlignment =NSTextAlignmentCenter;
+    [self.view addSubview:password];
+    
+    UITextField * passwordTextfiled  =[[UITextField alloc]init];
+    _passwordTextField = passwordTextfiled;
+    passwordTextfiled.frame = CGRectMake(leftMargin+labelWidth+kMargin, labelHeight+kMargin+upMargin+100.f,[UIScreen mainScreen].bounds.size.width-leftMargin-rightMargin-labelWidth-kMargin, labelHeight);
+    passwordTextfiled.placeholder = @"请输入密码";
+    passwordTextfiled.borderStyle = UITextBorderStyleRoundedRect;
+    passwordTextfiled.secureTextEntry = YES;
+    [self.view addSubview:passwordTextfiled];
+    
+    
+    UIButton *logon = [[UIButton alloc]init];
+    logon.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-labelWidth)*2/3, 2*labelHeight+2*kMargin+upMargin+100.f, labelWidth, labelHeight);
+    [logon setTitle:@"登录" forState:UIControlStateNormal];
+    [logon setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    logon.backgroundColor=[UIColor yellowColor];
+    [self.view addSubview:logon];
+    
+    [logon addTarget:self action:@selector(logonButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *storepassword = [[UIButton alloc]init];
+    storepassword.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-labelWidth)*1/3, 2*labelHeight+2*kMargin+upMargin+100.f, labelWidth, labelHeight);
+    [storepassword setImage:[UIImage imageNamed:@"pic_unchecked"] forState:UIControlStateNormal];
+    [storepassword setImage:[UIImage imageNamed:@"pic_checked"] forState:UIControlStateSelected];
+    [self.view addSubview:storepassword];
+    
+    [storepassword addTarget:self action:@selector(storepasswordButton:) forControlEvents:UIControlEventTouchUpInside];
+
+    
+    UIButton *resign = [[UIButton alloc]init];
+    resign.frame = CGRectMake([UIScreen mainScreen].bounds.size.width-labelWidth-40.f, [UIScreen mainScreen].bounds.size.height-labelHeight-kMargin, labelWidth+40.f, labelHeight);
+    [resign setTitle:@"注册新用户" forState:UIControlStateNormal];
+    [resign setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    resign.backgroundColor=[UIColor yellowColor];
+    [self.view addSubview:resign];
+    
+    [resign addTarget:self action:@selector(resignButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+#pragma mark 从keychain取用户名和密码 如果取到 则自定填充到_userName _passWord
+- (void)featchUserNamePwd{
+    NSDictionary* userPwdDict =  [[ACSimpleKeychain defaultKeychain] credentialsForIdentifier:@"user1" service:@"userpassword"];
+    
+    if (userPwdDict!= nil) {
+        _storepwd.selected = YES;
+        _accountTextField.text = [userPwdDict valueForKey:ACKeychainUsername];
+        _passwordTextField.text = [userPwdDict valueForKey:ACKeychainPassword];
+    }
+    if (_phoneNumber.length == 11) {
+        _storepwd.selected = NO;
+        _accountTextField.text = _phoneNumber;
+        _passwordTextField.text = @"";
+    }
+    
+}
+
+//隐藏键盘
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+    [self.view endEditing:YES];
+}
+#pragma mark 登录功能
+-(void)logonButton:(UIButton*)sender{
+    if (_accountTextField.text.length == 0) {
+        [MBProgressHUD showTipToWindow:@"手机号不能为空"];
+    }else
+    {
+        if (_passwordTextField.text.length == 0) {
+            [MBProgressHUD showTipToWindow:@"密码不能为空"];
+    }else
+       {
+           [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+           NSLog(@"登录成功");
+        }
+
+    }
+}
+
+#pragma mark  注册功能
+-(void)resignButton:(UIButton*)sender{
+    [self performSegueWithIdentifier:@"toResign" sender:self];
+    
+}
+
+
+#pragma mark  记住密码功能
+-(void)storepasswordButton:(UIButton*)sender{
+  sender.selected = !sender.selected;
+
+}
+-(void)backPage:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end
