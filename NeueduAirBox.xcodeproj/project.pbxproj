@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		061EFA97AD586FFB6D7AB539 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B2A589E21765D8302DA14C /* libPods.a */; };
+		1D8C40D41BF9AE5D006FA630 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C40D31BF9AE5D006FA630 /* main.m */; };
+		1D8C40D71BF9AE5D006FA630 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C40D61BF9AE5D006FA630 /* AppDelegate.m */; };
+		1D8C40DA1BF9AE5D006FA630 /* NeueduAirBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C40D81BF9AE5D006FA630 /* NeueduAirBox.xcdatamodeld */; };
+		1D8C40E21BF9AE5D006FA630 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C40E11BF9AE5D006FA630 /* Images.xcassets */; };
+		1D8C40E51BF9AE5D006FA630 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C40E31BF9AE5D006FA630 /* LaunchScreen.xib */; };
+		1D8C40F11BF9AE5E006FA630 /* NeueduAirBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C40F01BF9AE5E006FA630 /* NeueduAirBoxTests.m */; };
+		1D8C40FC1BF9C2A2006FA630 /* NEUABHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C40FB1BF9C2A2006FA630 /* NEUABHomeViewController.m */; };
+		1D8C41081BF9CF8F006FA630 /* LogReg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C41071BF9CF8F006FA630 /* LogReg.storyboard */; };
+		1D8C410A1BF9CF9E006FA630 /* DevMng.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C41091BF9CF9E006FA630 /* DevMng.storyboard */; };
+		1D8C410C1BF9CFC4006FA630 /* DevMoniter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C410B1BF9CFC4006FA630 /* DevMoniter.storyboard */; };
+		1D8C410E1BF9CFD3006FA630 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C410D1BF9CFD3006FA630 /* Setting.storyboard */; };
+		1D8C41101BF9CFE0006FA630 /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C410F1BF9CFE0006FA630 /* Other.storyboard */; };
+		1D8C41131BF9D78A006FA630 /* NEUABBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C41121BF9D78A006FA630 /* NEUABBaseViewController.m */; };
+		1D8C41161BF9D990006FA630 /* NEUABLogRegTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C41151BF9D990006FA630 /* NEUABLogRegTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1D8C40EB1BF9AE5D006FA630 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D8C40C61BF9AE5D006FA630 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D8C40CD1BF9AE5D006FA630;
+			remoteInfo = NeueduAirBox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D8C40CE1BF9AE5D006FA630 /* NeueduAirBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeueduAirBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D8C40D21BF9AE5D006FA630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D8C40D31BF9AE5D006FA630 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1D8C40D51BF9AE5D006FA630 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1D8C40D61BF9AE5D006FA630 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1D8C40D91BF9AE5D006FA630 /* NeueduAirBox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NeueduAirBox.xcdatamodel; sourceTree = "<group>"; };
+		1D8C40E11BF9AE5D006FA630 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1D8C40E41BF9AE5D006FA630 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		1D8C40EA1BF9AE5D006FA630 /* NeueduAirBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeueduAirBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D8C40EF1BF9AE5E006FA630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D8C40F01BF9AE5E006FA630 /* NeueduAirBoxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NeueduAirBoxTests.m; sourceTree = "<group>"; };
+		1D8C40FA1BF9C2A2006FA630 /* NEUABHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABHomeViewController.h; sourceTree = "<group>"; };
+		1D8C40FB1BF9C2A2006FA630 /* NEUABHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABHomeViewController.m; sourceTree = "<group>"; };
+		1D8C41071BF9CF8F006FA630 /* LogReg.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LogReg.storyboard; sourceTree = "<group>"; };
+		1D8C41091BF9CF9E006FA630 /* DevMng.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DevMng.storyboard; sourceTree = "<group>"; };
+		1D8C410B1BF9CFC4006FA630 /* DevMoniter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DevMoniter.storyboard; sourceTree = "<group>"; };
+		1D8C410D1BF9CFD3006FA630 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		1D8C410F1BF9CFE0006FA630 /* Other.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Other.storyboard; sourceTree = "<group>"; };
+		1D8C41111BF9D78A006FA630 /* NEUABBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABBaseViewController.h; sourceTree = "<group>"; };
+		1D8C41121BF9D78A006FA630 /* NEUABBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABBaseViewController.m; sourceTree = "<group>"; };
+		1D8C41141BF9D990006FA630 /* NEUABLogRegTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABLogRegTableViewController.h; sourceTree = "<group>"; };
+		1D8C41151BF9D990006FA630 /* NEUABLogRegTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABLogRegTableViewController.m; sourceTree = "<group>"; };
+		32417D847B8495B3B5C73AFB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		50244E1DFCC68305C741E490 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F2B2A589E21765D8302DA14C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D8C40CB1BF9AE5D006FA630 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				061EFA97AD586FFB6D7AB539 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D8C40E71BF9AE5D006FA630 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D8C40C51BF9AE5D006FA630 = {
+			isa = PBXGroup;
+			children = (
+				1D8C40D01BF9AE5D006FA630 /* NeueduAirBox */,
+				1D8C40ED1BF9AE5D006FA630 /* NeueduAirBoxTests */,
+				1D8C40CF1BF9AE5D006FA630 /* Products */,
+				4160BBAB8790AD061D3D04FF /* Pods */,
+				7680D5C5E72CB784D75B4219 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1D8C40CF1BF9AE5D006FA630 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D8C40CE1BF9AE5D006FA630 /* NeueduAirBox.app */,
+				1D8C40EA1BF9AE5D006FA630 /* NeueduAirBoxTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D8C40D01BF9AE5D006FA630 /* NeueduAirBox */ = {
+			isa = PBXGroup;
+			children = (
+				1D8C41001BF9C82C006FA630 /* Common */,
+				1D8C40FF1BF9C81B006FA630 /* Views */,
+				1D8C40FE1BF9C815006FA630 /* Models */,
+				1D8C40FD1BF9C80A006FA630 /* Controllers */,
+				1D8C40E11BF9AE5D006FA630 /* Images.xcassets */,
+				1D8C40E31BF9AE5D006FA630 /* LaunchScreen.xib */,
+				1D8C40D81BF9AE5D006FA630 /* NeueduAirBox.xcdatamodeld */,
+				1D8C40D11BF9AE5D006FA630 /* Supporting Files */,
+			);
+			path = NeueduAirBox;
+			sourceTree = "<group>";
+		};
+		1D8C40D11BF9AE5D006FA630 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D8C40D21BF9AE5D006FA630 /* Info.plist */,
+				1D8C40D31BF9AE5D006FA630 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D8C40ED1BF9AE5D006FA630 /* NeueduAirBoxTests */ = {
+			isa = PBXGroup;
+			children = (
+				1D8C40F01BF9AE5E006FA630 /* NeueduAirBoxTests.m */,
+				1D8C40EE1BF9AE5E006FA630 /* Supporting Files */,
+			);
+			path = NeueduAirBoxTests;
+			sourceTree = "<group>";
+		};
+		1D8C40EE1BF9AE5E006FA630 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D8C40EF1BF9AE5E006FA630 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D8C40FD1BF9C80A006FA630 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1D8C41061BF9CF72006FA630 /* 其他 */,
+				1D8C41051BF9CF6A006FA630 /* 设置 */,
+				1D8C41041BF9CF5D006FA630 /* 实时查看 */,
+				1D8C41031BF9CF54006FA630 /* 设备管理 */,
+				1D8C41021BF9CF4C006FA630 /* 注册登录 */,
+				1D8C41011BF9C835006FA630 /* 首页 */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		1D8C40FE1BF9C815006FA630 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1D8C40FF1BF9C81B006FA630 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		1D8C41001BF9C82C006FA630 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1D8C40D51BF9AE5D006FA630 /* AppDelegate.h */,
+				1D8C40D61BF9AE5D006FA630 /* AppDelegate.m */,
+				1D8C41111BF9D78A006FA630 /* NEUABBaseViewController.h */,
+				1D8C41121BF9D78A006FA630 /* NEUABBaseViewController.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		1D8C41011BF9C835006FA630 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				1D8C40FA1BF9C2A2006FA630 /* NEUABHomeViewController.h */,
+				1D8C40FB1BF9C2A2006FA630 /* NEUABHomeViewController.m */,
+			);
+			name = "首页";
+			sourceTree = "<group>";
+		};
+		1D8C41021BF9CF4C006FA630 /* 注册登录 */ = {
+			isa = PBXGroup;
+			children = (
+				1D8C41071BF9CF8F006FA630 /* LogReg.storyboard */,
+				1D8C41141BF9D990006FA630 /* NEUABLogRegTableViewController.h */,
+				1D8C41151BF9D990006FA630 /* NEUABLogRegTableViewController.m */,
+			);
+			name = "注册登录";
+			sourceTree = "<group>";
+		};
+		1D8C41031BF9CF54006FA630 /* 设备管理 */ = {
+			isa = PBXGroup;
+			children = (
+				1D8C41091BF9CF9E006FA630 /* DevMng.storyboard */,
+			);
+			name = "设备管理";
+			sourceTree = "<group>";
+		};
+		1D8C41041BF9CF5D006FA630 /* 实时查看 */ = {
+			isa = PBXGroup;
+			children = (
+				1D8C410B1BF9CFC4006FA630 /* DevMoniter.storyboard */,
+			);
+			name = "实时查看";
+			sourceTree = "<group>";
+		};
+		1D8C41051BF9CF6A006FA630 /* 设置 */ = {
+			isa = PBXGroup;
+			children = (
+				1D8C410D1BF9CFD3006FA630 /* Setting.storyboard */,
+			);
+			name = "设置";
+			sourceTree = "<group>";
+		};
+		1D8C41061BF9CF72006FA630 /* 其他 */ = {
+			isa = PBXGroup;
+			children = (
+				1D8C410F1BF9CFE0006FA630 /* Other.storyboard */,
+			);
+			name = "其他";
+			sourceTree = "<group>";
+		};
+		4160BBAB8790AD061D3D04FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32417D847B8495B3B5C73AFB /* Pods.debug.xcconfig */,
+				50244E1DFCC68305C741E490 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7680D5C5E72CB784D75B4219 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2B2A589E21765D8302DA14C /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D8C40CD1BF9AE5D006FA630 /* NeueduAirBox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D8C40F41BF9AE5E006FA630 /* Build configuration list for PBXNativeTarget "NeueduAirBox" */;
+			buildPhases = (
+				FA7C71400907AA6EFA351F16 /* Check Pods Manifest.lock */,
+				1D8C40CA1BF9AE5D006FA630 /* Sources */,
+				1D8C40CB1BF9AE5D006FA630 /* Frameworks */,
+				1D8C40CC1BF9AE5D006FA630 /* Resources */,
+				915D140779AC85A93C4B73BD /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NeueduAirBox;
+			productName = NeueduAirBox;
+			productReference = 1D8C40CE1BF9AE5D006FA630 /* NeueduAirBox.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1D8C40E91BF9AE5D006FA630 /* NeueduAirBoxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D8C40F71BF9AE5E006FA630 /* Build configuration list for PBXNativeTarget "NeueduAirBoxTests" */;
+			buildPhases = (
+				1D8C40E61BF9AE5D006FA630 /* Sources */,
+				1D8C40E71BF9AE5D006FA630 /* Frameworks */,
+				1D8C40E81BF9AE5D006FA630 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D8C40EC1BF9AE5D006FA630 /* PBXTargetDependency */,
+			);
+			name = NeueduAirBoxTests;
+			productName = NeueduAirBoxTests;
+			productReference = 1D8C40EA1BF9AE5D006FA630 /* NeueduAirBoxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1D8C40C61BF9AE5D006FA630 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = hegf;
+				TargetAttributes = {
+					1D8C40CD1BF9AE5D006FA630 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					1D8C40E91BF9AE5D006FA630 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 1D8C40CD1BF9AE5D006FA630;
+					};
+				};
+			};
+			buildConfigurationList = 1D8C40C91BF9AE5D006FA630 /* Build configuration list for PBXProject "NeueduAirBox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1D8C40C51BF9AE5D006FA630;
+			productRefGroup = 1D8C40CF1BF9AE5D006FA630 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D8C40CD1BF9AE5D006FA630 /* NeueduAirBox */,
+				1D8C40E91BF9AE5D006FA630 /* NeueduAirBoxTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D8C40CC1BF9AE5D006FA630 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D8C40E51BF9AE5D006FA630 /* LaunchScreen.xib in Resources */,
+				1D8C410A1BF9CF9E006FA630 /* DevMng.storyboard in Resources */,
+				1D8C410C1BF9CFC4006FA630 /* DevMoniter.storyboard in Resources */,
+				1D8C41081BF9CF8F006FA630 /* LogReg.storyboard in Resources */,
+				1D8C41101BF9CFE0006FA630 /* Other.storyboard in Resources */,
+				1D8C40E21BF9AE5D006FA630 /* Images.xcassets in Resources */,
+				1D8C410E1BF9CFD3006FA630 /* Setting.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D8C40E81BF9AE5D006FA630 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		915D140779AC85A93C4B73BD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA7C71400907AA6EFA351F16 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D8C40CA1BF9AE5D006FA630 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D8C41161BF9D990006FA630 /* NEUABLogRegTableViewController.m in Sources */,
+				1D8C41131BF9D78A006FA630 /* NEUABBaseViewController.m in Sources */,
+				1D8C40D71BF9AE5D006FA630 /* AppDelegate.m in Sources */,
+				1D8C40DA1BF9AE5D006FA630 /* NeueduAirBox.xcdatamodeld in Sources */,
+				1D8C40FC1BF9C2A2006FA630 /* NEUABHomeViewController.m in Sources */,
+				1D8C40D41BF9AE5D006FA630 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D8C40E61BF9AE5D006FA630 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D8C40F11BF9AE5E006FA630 /* NeueduAirBoxTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1D8C40EC1BF9AE5D006FA630 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D8C40CD1BF9AE5D006FA630 /* NeueduAirBox */;
+			targetProxy = 1D8C40EB1BF9AE5D006FA630 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1D8C40E31BF9AE5D006FA630 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D8C40E41BF9AE5D006FA630 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D8C40F21BF9AE5E006FA630 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1D8C40F31BF9AE5E006FA630 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1D8C40F51BF9AE5E006FA630 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32417D847B8495B3B5C73AFB /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NeueduAirBox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1D8C40F61BF9AE5E006FA630 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50244E1DFCC68305C741E490 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NeueduAirBox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1D8C40F81BF9AE5E006FA630 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NeueduAirBoxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeueduAirBox.app/NeueduAirBox";
+			};
+			name = Debug;
+		};
+		1D8C40F91BF9AE5E006FA630 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NeueduAirBoxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeueduAirBox.app/NeueduAirBox";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D8C40C91BF9AE5D006FA630 /* Build configuration list for PBXProject "NeueduAirBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D8C40F21BF9AE5E006FA630 /* Debug */,
+				1D8C40F31BF9AE5E006FA630 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D8C40F41BF9AE5E006FA630 /* Build configuration list for PBXNativeTarget "NeueduAirBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D8C40F51BF9AE5E006FA630 /* Debug */,
+				1D8C40F61BF9AE5E006FA630 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D8C40F71BF9AE5E006FA630 /* Build configuration list for PBXNativeTarget "NeueduAirBoxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D8C40F81BF9AE5E006FA630 /* Debug */,
+				1D8C40F91BF9AE5E006FA630 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1D8C40D81BF9AE5D006FA630 /* NeueduAirBox.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1D8C40D91BF9AE5D006FA630 /* NeueduAirBox.xcdatamodel */,
+			);
+			currentVersion = 1D8C40D91BF9AE5D006FA630 /* NeueduAirBox.xcdatamodel */;
+			path = NeueduAirBox.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1D8C40C61BF9AE5D006FA630 /* Project object */;
+}

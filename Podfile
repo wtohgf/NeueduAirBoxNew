@@ -1,0 +1,6 @@
+platform :ios, '8.3'
+pod 'AFNetworking', '~> 2.6.0'
+pod 'RDVTabBarController', '~> 1.1.9'
+pod 'SDWebImage', '~> 3.7.3'
+pod 'MBProgressHUD', '~> 0.9.1'
+pod 'EFAnimationMenu', '~> 0.0.8'
