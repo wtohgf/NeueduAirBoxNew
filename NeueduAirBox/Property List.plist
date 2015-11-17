@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Equipment</key>
+		<string>test0000000001</string>
+		<key>dvicename</key>
+		<string>张三家的空气盒子</string>
+		<key>dviceState</key>
+		<string>正常</string>
+		<key>dviceaddress</key>
+		<string>谷歌里901</string>
+	</dict>
+	<dict>
+		<key>Equipment</key>
+		<string>test0000000002</string>
+		<key>dvicename</key>
+		<string>李四家的空气盒子</string>
+		<key>dviceState</key>
+		<string>未连接</string>
+		<key>dviceaddress</key>
+		<string>谷歌里902</string>
+	</dict>
+	<dict>
+		<key>Equipment</key>
+		<string>test0000000003</string>
+		<key>dvicename</key>
+		<string>王五家的空气盒子</string>
+		<key>dviceState</key>
+		<string>异常</string>
+		<key>dviceaddress</key>
+		<string>谷歌里903</string>
+	</dict>
+</array>
+</plist>

@@ -17,7 +17,6 @@
 		1D8C40F11BF9AE5E006FA630 /* NeueduAirBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C40F01BF9AE5E006FA630 /* NeueduAirBoxTests.m */; };
 		1D8C40FC1BF9C2A2006FA630 /* NEUABHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C40FB1BF9C2A2006FA630 /* NEUABHomeViewController.m */; };
 		1D8C41081BF9CF8F006FA630 /* LogReg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C41071BF9CF8F006FA630 /* LogReg.storyboard */; };
-		1D8C410A1BF9CF9E006FA630 /* DevMng.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C41091BF9CF9E006FA630 /* DevMng.storyboard */; };
 		1D8C410C1BF9CFC4006FA630 /* DevMoniter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C410B1BF9CFC4006FA630 /* DevMoniter.storyboard */; };
 		1D8C410E1BF9CFD3006FA630 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C410D1BF9CFD3006FA630 /* Setting.storyboard */; };
 		1D8C41101BF9CFE0006FA630 /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C410F1BF9CFE0006FA630 /* Other.storyboard */; };
@@ -26,6 +25,11 @@
 		C75050FD1BFACEA3009B301F /* NEUABResignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C75050FB1BFACEA3009B301F /* NEUABResignViewController.m */; };
 		C75051031BFACF32009B301F /* MBProgressHUD+MoreExtentions.m in Sources */ = {isa = PBXBuildFile; fileRef = C75051021BFACF32009B301F /* MBProgressHUD+MoreExtentions.m */; };
 		C75051071BFACFF6009B301F /* ACSimpleKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = C75051061BFACFF6009B301F /* ACSimpleKeychain.m */; };
+		C7626AC01BFB1C5100EF0589 /* DevMng.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7626ABB1BFB1C5100EF0589 /* DevMng.storyboard */; };
+		C7626AC11BFB1C5100EF0589 /* NEUABDevMngTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7626ABD1BFB1C5100EF0589 /* NEUABDevMngTableViewController.m */; };
+		C7626AC21BFB1C5100EF0589 /* NEUABDevMngTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7626ABF1BFB1C5100EF0589 /* NEUABDevMngTableViewCell.m */; };
+		C7626AC41BFB1CBF00EF0589 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7626AC31BFB1CBF00EF0589 /* Property List.plist */; };
+		C7626AC71BFB1CD000EF0589 /* NEUABEquipmentManageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C7626AC61BFB1CD000EF0589 /* NEUABEquipmentManageModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +59,6 @@
 		1D8C40FA1BF9C2A2006FA630 /* NEUABHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABHomeViewController.h; sourceTree = "<group>"; };
 		1D8C40FB1BF9C2A2006FA630 /* NEUABHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABHomeViewController.m; sourceTree = "<group>"; };
 		1D8C41071BF9CF8F006FA630 /* LogReg.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LogReg.storyboard; sourceTree = "<group>"; };
-		1D8C41091BF9CF9E006FA630 /* DevMng.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DevMng.storyboard; sourceTree = "<group>"; };
 		1D8C410B1BF9CFC4006FA630 /* DevMoniter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DevMoniter.storyboard; sourceTree = "<group>"; };
 		1D8C410D1BF9CFD3006FA630 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		1D8C410F1BF9CFE0006FA630 /* Other.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Other.storyboard; sourceTree = "<group>"; };
@@ -71,6 +74,14 @@
 		C75051021BFACF32009B301F /* MBProgressHUD+MoreExtentions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MoreExtentions.m"; sourceTree = "<group>"; };
 		C75051051BFACFF6009B301F /* ACSimpleKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSimpleKeychain.h; sourceTree = "<group>"; };
 		C75051061BFACFF6009B301F /* ACSimpleKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACSimpleKeychain.m; sourceTree = "<group>"; };
+		C7626ABB1BFB1C5100EF0589 /* DevMng.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DevMng.storyboard; sourceTree = "<group>"; };
+		C7626ABC1BFB1C5100EF0589 /* NEUABDevMngTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABDevMngTableViewController.h; sourceTree = "<group>"; };
+		C7626ABD1BFB1C5100EF0589 /* NEUABDevMngTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABDevMngTableViewController.m; sourceTree = "<group>"; };
+		C7626ABE1BFB1C5100EF0589 /* NEUABDevMngTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABDevMngTableViewCell.h; sourceTree = "<group>"; };
+		C7626ABF1BFB1C5100EF0589 /* NEUABDevMngTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABDevMngTableViewCell.m; sourceTree = "<group>"; };
+		C7626AC31BFB1CBF00EF0589 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		C7626AC51BFB1CD000EF0589 /* NEUABEquipmentManageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABEquipmentManageModel.h; sourceTree = "<group>"; };
+		C7626AC61BFB1CD000EF0589 /* NEUABEquipmentManageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABEquipmentManageModel.m; sourceTree = "<group>"; };
 		F2B2A589E21765D8302DA14C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -171,6 +182,8 @@
 		1D8C40FE1BF9C815006FA630 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C7626AC51BFB1CD000EF0589 /* NEUABEquipmentManageModel.h */,
+				C7626AC61BFB1CD000EF0589 /* NEUABEquipmentManageModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -215,7 +228,11 @@
 		1D8C41031BF9CF54006FA630 /* 设备管理 */ = {
 			isa = PBXGroup;
 			children = (
-				1D8C41091BF9CF9E006FA630 /* DevMng.storyboard */,
+				C7626ABB1BFB1C5100EF0589 /* DevMng.storyboard */,
+				C7626ABC1BFB1C5100EF0589 /* NEUABDevMngTableViewController.h */,
+				C7626ABD1BFB1C5100EF0589 /* NEUABDevMngTableViewController.m */,
+				C7626ABE1BFB1C5100EF0589 /* NEUABDevMngTableViewCell.h */,
+				C7626ABF1BFB1C5100EF0589 /* NEUABDevMngTableViewCell.m */,
 			);
 			name = "设备管理";
 			sourceTree = "<group>";
@@ -283,6 +300,7 @@
 		C75051001BFACF07009B301F /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				C7626AC31BFB1CBF00EF0589 /* Property List.plist */,
 				1D8C40D51BF9AE5D006FA630 /* AppDelegate.h */,
 				1D8C40D61BF9AE5D006FA630 /* AppDelegate.m */,
 				C75050FE1BFACEE8009B301F /* Category */,
@@ -383,11 +401,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D8C40E51BF9AE5D006FA630 /* LaunchScreen.xib in Resources */,
-				1D8C410A1BF9CF9E006FA630 /* DevMng.storyboard in Resources */,
 				1D8C410C1BF9CFC4006FA630 /* DevMoniter.storyboard in Resources */,
+				C7626AC01BFB1C5100EF0589 /* DevMng.storyboard in Resources */,
 				1D8C41081BF9CF8F006FA630 /* LogReg.storyboard in Resources */,
 				1D8C41101BF9CFE0006FA630 /* Other.storyboard in Resources */,
 				1D8C40E21BF9AE5D006FA630 /* Images.xcassets in Resources */,
+				C7626AC41BFB1CBF00EF0589 /* Property List.plist in Resources */,
 				1D8C410E1BF9CFD3006FA630 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,12 +459,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C75051071BFACFF6009B301F /* ACSimpleKeychain.m in Sources */,
+				C7626AC11BFB1C5100EF0589 /* NEUABDevMngTableViewController.m in Sources */,
 				C75050FC1BFACEA3009B301F /* NEUABLogRegViewController.m in Sources */,
 				1D8C41131BF9D78A006FA630 /* NEUABBaseViewController.m in Sources */,
+				C7626AC21BFB1C5100EF0589 /* NEUABDevMngTableViewCell.m in Sources */,
 				1D8C40D71BF9AE5D006FA630 /* AppDelegate.m in Sources */,
 				C75050FD1BFACEA3009B301F /* NEUABResignViewController.m in Sources */,
 				1D64BD081BFB0E1700D056AD /* NEUABDevMoniterViewController.m in Sources */,
 				1D8C40DA1BF9AE5D006FA630 /* NeueduAirBox.xcdatamodeld in Sources */,
+				C7626AC71BFB1CD000EF0589 /* NEUABEquipmentManageModel.m in Sources */,
 				C75051031BFACF32009B301F /* MBProgressHUD+MoreExtentions.m in Sources */,
 				1D8C40FC1BF9C2A2006FA630 /* NEUABHomeViewController.m in Sources */,
 				1D8C40D41BF9AE5D006FA630 /* main.m in Sources */,
