@@ -30,6 +30,7 @@
 		C7626AC21BFB1C5100EF0589 /* NEUABDevMngTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7626ABF1BFB1C5100EF0589 /* NEUABDevMngTableViewCell.m */; };
 		C7626AC41BFB1CBF00EF0589 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7626AC31BFB1CBF00EF0589 /* Property List.plist */; };
 		C7626AC71BFB1CD000EF0589 /* NEUABEquipmentManageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C7626AC61BFB1CD000EF0589 /* NEUABEquipmentManageModel.m */; };
+		C7626ACB1BFB1DAC00EF0589 /* NEUABAddDevMngViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7626ACA1BFB1DAC00EF0589 /* NEUABAddDevMngViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		C7626AC31BFB1CBF00EF0589 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 		C7626AC51BFB1CD000EF0589 /* NEUABEquipmentManageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABEquipmentManageModel.h; sourceTree = "<group>"; };
 		C7626AC61BFB1CD000EF0589 /* NEUABEquipmentManageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABEquipmentManageModel.m; sourceTree = "<group>"; };
+		C7626AC91BFB1DAC00EF0589 /* NEUABAddDevMngViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABAddDevMngViewController.h; sourceTree = "<group>"; };
+		C7626ACA1BFB1DAC00EF0589 /* NEUABAddDevMngViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABAddDevMngViewController.m; sourceTree = "<group>"; };
 		F2B2A589E21765D8302DA14C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -228,6 +231,7 @@
 		1D8C41031BF9CF54006FA630 /* 设备管理 */ = {
 			isa = PBXGroup;
 			children = (
+				C7626AC81BFB1D8600EF0589 /* 添加设备 */,
 				C7626ABB1BFB1C5100EF0589 /* DevMng.storyboard */,
 				C7626ABC1BFB1C5100EF0589 /* NEUABDevMngTableViewController.h */,
 				C7626ABD1BFB1C5100EF0589 /* NEUABDevMngTableViewController.m */,
@@ -316,6 +320,15 @@
 				C75051061BFACFF6009B301F /* ACSimpleKeychain.m */,
 			);
 			name = "保存密码";
+			sourceTree = "<group>";
+		};
+		C7626AC81BFB1D8600EF0589 /* 添加设备 */ = {
+			isa = PBXGroup;
+			children = (
+				C7626AC91BFB1DAC00EF0589 /* NEUABAddDevMngViewController.h */,
+				C7626ACA1BFB1DAC00EF0589 /* NEUABAddDevMngViewController.m */,
+			);
+			name = "添加设备";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,6 +482,7 @@
 				1D8C40DA1BF9AE5D006FA630 /* NeueduAirBox.xcdatamodeld in Sources */,
 				C7626AC71BFB1CD000EF0589 /* NEUABEquipmentManageModel.m in Sources */,
 				C75051031BFACF32009B301F /* MBProgressHUD+MoreExtentions.m in Sources */,
+				C7626ACB1BFB1DAC00EF0589 /* NEUABAddDevMngViewController.m in Sources */,
 				1D8C40FC1BF9C2A2006FA630 /* NEUABHomeViewController.m in Sources */,
 				1D8C40D41BF9AE5D006FA630 /* main.m in Sources */,
 			);

@@ -45,7 +45,8 @@
 
 -(void)addEquipmentManage{
 
-
+    [self performSegueWithIdentifier:@"toadddev" sender:nil];
+    
 
 
 }
