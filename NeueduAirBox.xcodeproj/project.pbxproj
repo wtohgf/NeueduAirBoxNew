@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		061EFA97AD586FFB6D7AB539 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B2A589E21765D8302DA14C /* libPods.a */; };
+		1D64BD081BFB0E1700D056AD /* NEUABDevMoniterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D64BD071BFB0E1700D056AD /* NEUABDevMoniterViewController.m */; };
 		1D8C40D41BF9AE5D006FA630 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C40D31BF9AE5D006FA630 /* main.m */; };
 		1D8C40D71BF9AE5D006FA630 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C40D61BF9AE5D006FA630 /* AppDelegate.m */; };
 		1D8C40DA1BF9AE5D006FA630 /* NeueduAirBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C40D81BF9AE5D006FA630 /* NeueduAirBox.xcdatamodeld */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D64BD061BFB0E1700D056AD /* NEUABDevMoniterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABDevMoniterViewController.h; sourceTree = "<group>"; };
+		1D64BD071BFB0E1700D056AD /* NEUABDevMoniterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABDevMoniterViewController.m; sourceTree = "<group>"; };
 		1D8C40CE1BF9AE5D006FA630 /* NeueduAirBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeueduAirBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D8C40D21BF9AE5D006FA630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D8C40D31BF9AE5D006FA630 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 		1D8C41041BF9CF5D006FA630 /* 实时查看 */ = {
 			isa = PBXGroup;
 			children = (
+				1D64BD061BFB0E1700D056AD /* NEUABDevMoniterViewController.h */,
+				1D64BD071BFB0E1700D056AD /* NEUABDevMoniterViewController.m */,
 				1D8C410B1BF9CFC4006FA630 /* DevMoniter.storyboard */,
 			);
 			name = "实时查看";
@@ -439,6 +444,7 @@
 				1D8C41131BF9D78A006FA630 /* NEUABBaseViewController.m in Sources */,
 				1D8C40D71BF9AE5D006FA630 /* AppDelegate.m in Sources */,
 				C75050FD1BFACEA3009B301F /* NEUABResignViewController.m in Sources */,
+				1D64BD081BFB0E1700D056AD /* NEUABDevMoniterViewController.m in Sources */,
 				1D8C40DA1BF9AE5D006FA630 /* NeueduAirBox.xcdatamodeld in Sources */,
 				C75051031BFACF32009B301F /* MBProgressHUD+MoreExtentions.m in Sources */,
 				1D8C40FC1BF9C2A2006FA630 /* NEUABHomeViewController.m in Sources */,

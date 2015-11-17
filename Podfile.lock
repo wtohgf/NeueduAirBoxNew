@@ -21,6 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - EFAnimationMenu (0.0.8)
+  - JBChartView (2.8.16)
   - MBProgressHUD (0.9.1)
   - RDVTabBarController (1.1.9)
   - SDWebImage (3.7.3):
@@ -30,6 +31,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.6.0)
   - EFAnimationMenu (~> 0.0.8)
+  - JBChartView (~> 2.8.16)
   - MBProgressHUD (~> 0.9.1)
   - RDVTabBarController (~> 1.1.9)
   - SDWebImage (~> 3.7.3)
@@ -37,6 +39,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
   EFAnimationMenu: db635c91fa89f424b456df6acbb2ca63397acc8b
+  JBChartView: 8e65b7fbb4e7f1f2c0197575734fce4af1c19e17
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   RDVTabBarController: 67794f7a7a37f8e32f046f85ac67d06ab92d624a
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
