@@ -32,6 +32,10 @@
 		C75050FD1BFACEA3009B301F /* NEUABResignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C75050FB1BFACEA3009B301F /* NEUABResignViewController.m */; };
 		C75051031BFACF32009B301F /* MBProgressHUD+MoreExtentions.m in Sources */ = {isa = PBXBuildFile; fileRef = C75051021BFACF32009B301F /* MBProgressHUD+MoreExtentions.m */; };
 		C75051071BFACFF6009B301F /* ACSimpleKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = C75051061BFACFF6009B301F /* ACSimpleKeychain.m */; };
+		C75275511BFC11A200E847C7 /* NEUABCounterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C75275501BFC11A200E847C7 /* NEUABCounterView.m */; };
+		C75275541BFC139100E847C7 /* NEUABThermometerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C75275531BFC139100E847C7 /* NEUABThermometerView.m */; };
+		C75275571BFC15DF00E847C7 /* NEUABThermometerTubeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C75275561BFC15DF00E847C7 /* NEUABThermometerTubeView.m */; };
+		C752755A1BFC16FF00E847C7 /* NEUABThermometerSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C75275591BFC16FF00E847C7 /* NEUABThermometerSummaryView.m */; };
 		C7626AC01BFB1C5100EF0589 /* DevMng.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7626ABB1BFB1C5100EF0589 /* DevMng.storyboard */; };
 		C7626AC11BFB1C5100EF0589 /* NEUABDevMngTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7626ABD1BFB1C5100EF0589 /* NEUABDevMngTableViewController.m */; };
 		C7626AC21BFB1C5100EF0589 /* NEUABDevMngTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7626ABF1BFB1C5100EF0589 /* NEUABDevMngTableViewCell.m */; };
@@ -89,6 +93,14 @@
 		C75051021BFACF32009B301F /* MBProgressHUD+MoreExtentions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MoreExtentions.m"; sourceTree = "<group>"; };
 		C75051051BFACFF6009B301F /* ACSimpleKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSimpleKeychain.h; sourceTree = "<group>"; };
 		C75051061BFACFF6009B301F /* ACSimpleKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACSimpleKeychain.m; sourceTree = "<group>"; };
+		C752754F1BFC11A200E847C7 /* NEUABCounterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABCounterView.h; sourceTree = "<group>"; };
+		C75275501BFC11A200E847C7 /* NEUABCounterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABCounterView.m; sourceTree = "<group>"; };
+		C75275521BFC139100E847C7 /* NEUABThermometerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABThermometerView.h; sourceTree = "<group>"; };
+		C75275531BFC139100E847C7 /* NEUABThermometerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABThermometerView.m; sourceTree = "<group>"; };
+		C75275551BFC15DF00E847C7 /* NEUABThermometerTubeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABThermometerTubeView.h; sourceTree = "<group>"; };
+		C75275561BFC15DF00E847C7 /* NEUABThermometerTubeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABThermometerTubeView.m; sourceTree = "<group>"; };
+		C75275581BFC16FF00E847C7 /* NEUABThermometerSummaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABThermometerSummaryView.h; sourceTree = "<group>"; };
+		C75275591BFC16FF00E847C7 /* NEUABThermometerSummaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABThermometerSummaryView.m; sourceTree = "<group>"; };
 		C7626ABB1BFB1C5100EF0589 /* DevMng.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DevMng.storyboard; sourceTree = "<group>"; };
 		C7626ABC1BFB1C5100EF0589 /* NEUABDevMngTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABDevMngTableViewController.h; sourceTree = "<group>"; };
 		C7626ABD1BFB1C5100EF0589 /* NEUABDevMngTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABDevMngTableViewController.m; sourceTree = "<group>"; };
@@ -215,6 +227,7 @@
 		1D8C40FF1BF9C81B006FA630 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C752755B1BFC194400E847C7 /* 温度计工具 */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -348,6 +361,21 @@
 				C75051061BFACFF6009B301F /* ACSimpleKeychain.m */,
 			);
 			name = "保存密码";
+			sourceTree = "<group>";
+		};
+		C752755B1BFC194400E847C7 /* 温度计工具 */ = {
+			isa = PBXGroup;
+			children = (
+				C752754F1BFC11A200E847C7 /* NEUABCounterView.h */,
+				C75275501BFC11A200E847C7 /* NEUABCounterView.m */,
+				C75275521BFC139100E847C7 /* NEUABThermometerView.h */,
+				C75275531BFC139100E847C7 /* NEUABThermometerView.m */,
+				C75275551BFC15DF00E847C7 /* NEUABThermometerTubeView.h */,
+				C75275561BFC15DF00E847C7 /* NEUABThermometerTubeView.m */,
+				C75275581BFC16FF00E847C7 /* NEUABThermometerSummaryView.h */,
+				C75275591BFC16FF00E847C7 /* NEUABThermometerSummaryView.m */,
+			);
+			name = "温度计工具";
 			sourceTree = "<group>";
 		};
 		C7626AC81BFB1D8600EF0589 /* 添加设备 */ = {
@@ -500,7 +528,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C75051071BFACFF6009B301F /* ACSimpleKeychain.m in Sources */,
+				C75275511BFC11A200E847C7 /* NEUABCounterView.m in Sources */,
 				C7626AC11BFB1C5100EF0589 /* NEUABDevMngTableViewController.m in Sources */,
+				C75275541BFC139100E847C7 /* NEUABThermometerView.m in Sources */,
+				C752755A1BFC16FF00E847C7 /* NEUABThermometerSummaryView.m in Sources */,
 				C75050FC1BFACEA3009B301F /* NEUABLogRegViewController.m in Sources */,
 				1D8C41131BF9D78A006FA630 /* NEUABBaseViewController.m in Sources */,
 				C7626AC21BFB1C5100EF0589 /* NEUABDevMngTableViewCell.m in Sources */,
@@ -510,6 +541,7 @@
 				1D8C40DA1BF9AE5D006FA630 /* NeueduAirBox.xcdatamodeld in Sources */,
 				C7626AC71BFB1CD000EF0589 /* NEUABEquipmentManageModel.m in Sources */,
 				C75051031BFACF32009B301F /* MBProgressHUD+MoreExtentions.m in Sources */,
+				C75275571BFC15DF00E847C7 /* NEUABThermometerTubeView.m in Sources */,
 				C7626ACB1BFB1DAC00EF0589 /* NEUABAddDevMngViewController.m in Sources */,
 				1D8C40FC1BF9C2A2006FA630 /* NEUABHomeViewController.m in Sources */,
 				1D8C40D41BF9AE5D006FA630 /* main.m in Sources */,

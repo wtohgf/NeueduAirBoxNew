@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <JBLineChartView.h>
-
+#import "NEUABThermometerSummaryView.h"
 @interface NEUABDevMoniterViewController : UIViewController<JBLineChartViewDataSource, JBLineChartViewDelegate>
+@property(nonatomic)NEUABThermometerSummaryView*Thermometer;
 
 @end
