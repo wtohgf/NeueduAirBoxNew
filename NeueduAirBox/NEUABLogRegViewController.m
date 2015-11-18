@@ -10,8 +10,10 @@
 #import "ACSimpleKeychain.h"
 #import <MBProgressHUD.h>
 #import "MBProgressHUD+MoreExtentions.h"
+#import <SMS_SDK/SMSSDK.h>
 
 @interface NEUABLogRegViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *SMSCode;
 @property (weak, nonatomic)UIButton *storepwd;
 @end
 
@@ -128,7 +130,34 @@
 
 #pragma mark  注册功能
 -(void)resignButton:(UIButton*)sender{
-    [self performSegueWithIdentifier:@"toResign" sender:self];
+//    
+//    RegViewController* reg = [[RegViewController alloc] init];
+//    [self presentViewController:reg animated:YES completion:^{
+//        
+//    }];
+//
+//    [self performSegueWithIdentifier:@"toResign" sender:self];
+//
+    
+}
+- (IBAction)sendSMS:(UIButton *)sender {
+    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:@"13624259320" zone:@"86" customIdentifier:nil result:^(NSError *error) {
+        if (!error) {
+            NSLog(@"获取验证码成功");
+        } else {
+            NSLog(@"错误码：%@",error.debugDescription);
+        }
+    }];
+}
+- (IBAction)checkSMS:(UIButton *)sender {
+        
+    [SMSSDK commitVerificationCode:_SMSCode.text phoneNumber:@"13624259320" zone:@"86" result:^(NSError *error) {
+        if (!error) {
+            NSLog(@"验证成功");
+        } else {
+            NSLog(@"错误码：%@",error.debugDescription);
+        }
+    }];
     
 }
 
@@ -138,6 +167,7 @@
   sender.selected = !sender.selected;
 
 }
+
 -(void)backPage:(id)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -147,14 +177,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

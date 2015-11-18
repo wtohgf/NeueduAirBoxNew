@@ -9,6 +9,13 @@
 #import "AppDelegate.h"
 #import "NEUABHomeViewController.h"
 
+#import <SMS_SDK/SMSSDK.h>
+#import <SMS_SDK/SMSSDK+AddressBookMethods.h>
+
+#define appKey @"c68f174a5c40"
+#define appSecret @"1d62c897323ba2c4cc5d7a5eef8c591b"
+
+
 @interface AppDelegate ()
 
 @end
@@ -19,6 +26,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    //初始化应用，appKey和appSecret从后台申请得到
+    [SMSSDK registerApp:appKey
+             withSecret:appSecret];
+    
     NEUABHomeViewController* hvc = [[NEUABHomeViewController alloc]init];
     hvc.view.frame = [UIScreen mainScreen].bounds;
     hvc.view.backgroundColor = [UIColor blueColor];
@@ -26,6 +37,7 @@
 
     self.window.rootViewController = hvc;
     [self.window makeKeyAndVisible];
+    
     
     return YES;
 }

@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		061EFA97AD586FFB6D7AB539 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B2A589E21765D8302DA14C /* libPods.a */; };
 		1D64BD081BFB0E1700D056AD /* NEUABDevMoniterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D64BD071BFB0E1700D056AD /* NEUABDevMoniterViewController.m */; };
+		1D64BD431BFC1AC600D056AD /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D64BD421BFC1AC600D056AD /* SMS_SDK.framework */; };
+		1D64BD681BFC1C7600D056AD /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D64BD671BFC1C7600D056AD /* MOBFoundation.framework */; };
+		1D64BD6A1BFC225100D056AD /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D64BD691BFC225100D056AD /* libicucore.dylib */; };
+		1D64BD6C1BFC225E00D056AD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D64BD6B1BFC225E00D056AD /* libz.dylib */; };
+		1D64BD6E1BFC226A00D056AD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D64BD6D1BFC226A00D056AD /* MessageUI.framework */; };
+		1D64BD701BFC227700D056AD /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D64BD6F1BFC227700D056AD /* JavaScriptCore.framework */; };
+		1D64BD721BFC228600D056AD /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D64BD711BFC228600D056AD /* libstdc++.dylib */; };
 		1D8C40D41BF9AE5D006FA630 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C40D31BF9AE5D006FA630 /* main.m */; };
 		1D8C40D71BF9AE5D006FA630 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C40D61BF9AE5D006FA630 /* AppDelegate.m */; };
 		1D8C40DA1BF9AE5D006FA630 /* NeueduAirBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C40D81BF9AE5D006FA630 /* NeueduAirBox.xcdatamodeld */; };
@@ -46,6 +53,13 @@
 /* Begin PBXFileReference section */
 		1D64BD061BFB0E1700D056AD /* NEUABDevMoniterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABDevMoniterViewController.h; sourceTree = "<group>"; };
 		1D64BD071BFB0E1700D056AD /* NEUABDevMoniterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABDevMoniterViewController.m; sourceTree = "<group>"; };
+		1D64BD421BFC1AC600D056AD /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		1D64BD671BFC1C7600D056AD /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		1D64BD691BFC225100D056AD /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		1D64BD6B1BFC225E00D056AD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		1D64BD6D1BFC226A00D056AD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		1D64BD6F1BFC227700D056AD /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		1D64BD711BFC228600D056AD /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		1D8C40CE1BF9AE5D006FA630 /* NeueduAirBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeueduAirBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D8C40D21BF9AE5D006FA630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D8C40D31BF9AE5D006FA630 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,7 +107,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D64BD721BFC228600D056AD /* libstdc++.dylib in Frameworks */,
+				1D64BD701BFC227700D056AD /* JavaScriptCore.framework in Frameworks */,
+				1D64BD6E1BFC226A00D056AD /* MessageUI.framework in Frameworks */,
+				1D64BD6C1BFC225E00D056AD /* libz.dylib in Frameworks */,
+				1D64BD6A1BFC225100D056AD /* libicucore.dylib in Frameworks */,
+				1D64BD681BFC1C7600D056AD /* MOBFoundation.framework in Frameworks */,
 				061EFA97AD586FFB6D7AB539 /* libPods.a in Frameworks */,
+				1D64BD431BFC1AC600D056AD /* SMS_SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +300,13 @@
 		7680D5C5E72CB784D75B4219 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D64BD711BFC228600D056AD /* libstdc++.dylib */,
+				1D64BD6F1BFC227700D056AD /* JavaScriptCore.framework */,
+				1D64BD6D1BFC226A00D056AD /* MessageUI.framework */,
+				1D64BD6B1BFC225E00D056AD /* libz.dylib */,
+				1D64BD691BFC225100D056AD /* libicucore.dylib */,
+				1D64BD671BFC1C7600D056AD /* MOBFoundation.framework */,
+				1D64BD421BFC1AC600D056AD /* SMS_SDK.framework */,
 				F2B2A589E21765D8302DA14C /* libPods.a */,
 			);
 			name = Frameworks;
@@ -603,6 +631,10 @@
 			baseConfigurationReference = 32417D847B8495B3B5C73AFB /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NeueduAirBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -614,6 +646,10 @@
 			baseConfigurationReference = 50244E1DFCC68305C741E490 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NeueduAirBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
