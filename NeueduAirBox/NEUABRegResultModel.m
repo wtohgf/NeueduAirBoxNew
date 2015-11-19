@@ -14,14 +14,13 @@
     NEUABRegResultModel* model = [[NEUABRegResultModel alloc]init];
     if (model) {
         model.msg = [dict objectForKey:@"msg"];
-        model.uid = [dict objectForKey:@"uid"];
         model.errorType = [dict objectForKey:@"errorType"];
     }
     return model;
 }
 
 -(NSString *)description{
-    NSString* string = [NSString stringWithFormat:@"msg=%@ uid=%@ errorType=%@", self.msg, self.uid, self.errorType];
+    NSString* string = [NSString stringWithFormat:@"msg=%@ errorType=%@", self.msg,  self.errorType];
     return string;
 }
 

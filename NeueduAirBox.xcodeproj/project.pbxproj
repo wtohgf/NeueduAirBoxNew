@@ -53,6 +53,12 @@
 		C7626AC41BFB1CBF00EF0589 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7626AC31BFB1CBF00EF0589 /* Property List.plist */; };
 		C7626AC71BFB1CD000EF0589 /* NEUABEquipmentManageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C7626AC61BFB1CD000EF0589 /* NEUABEquipmentManageModel.m */; };
 		C7626ACB1BFB1DAC00EF0589 /* NEUABAddDevMngViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7626ACA1BFB1DAC00EF0589 /* NEUABAddDevMngViewController.m */; };
+		C76D4A801BFD700C00936660 /* NEUABLogResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C76D4A7F1BFD700C00936660 /* NEUABLogResultModel.m */; };
+		C76D4A831BFD724300936660 /* NEUABRegDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C76D4A821BFD724300936660 /* NEUABRegDeviceModel.m */; };
+		C76D4A861BFD740500936660 /* NEUABLogoutDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C76D4A851BFD740500936660 /* NEUABLogoutDeviceModel.m */; };
+		C76D4A891BFD753200936660 /* NEUABGetEnvironmentalDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C76D4A881BFD753200936660 /* NEUABGetEnvironmentalDataModel.m */; };
+		C76D4A8C1BFD76A700936660 /* NEUABGetDeviceListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C76D4A8B1BFD76A700936660 /* NEUABGetDeviceListModel.m */; };
+		C76D4A8F1BFD7BD200936660 /* NEUABEquipments.m in Sources */ = {isa = PBXBuildFile; fileRef = C76D4A8E1BFD7BD200936660 /* NEUABEquipments.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +145,18 @@
 		C7626AC61BFB1CD000EF0589 /* NEUABEquipmentManageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABEquipmentManageModel.m; sourceTree = "<group>"; };
 		C7626AC91BFB1DAC00EF0589 /* NEUABAddDevMngViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABAddDevMngViewController.h; sourceTree = "<group>"; };
 		C7626ACA1BFB1DAC00EF0589 /* NEUABAddDevMngViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABAddDevMngViewController.m; sourceTree = "<group>"; };
+		C76D4A7E1BFD700C00936660 /* NEUABLogResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABLogResultModel.h; sourceTree = "<group>"; };
+		C76D4A7F1BFD700C00936660 /* NEUABLogResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABLogResultModel.m; sourceTree = "<group>"; };
+		C76D4A811BFD724300936660 /* NEUABRegDeviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABRegDeviceModel.h; sourceTree = "<group>"; };
+		C76D4A821BFD724300936660 /* NEUABRegDeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABRegDeviceModel.m; sourceTree = "<group>"; };
+		C76D4A841BFD740500936660 /* NEUABLogoutDeviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABLogoutDeviceModel.h; sourceTree = "<group>"; };
+		C76D4A851BFD740500936660 /* NEUABLogoutDeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABLogoutDeviceModel.m; sourceTree = "<group>"; };
+		C76D4A871BFD753200936660 /* NEUABGetEnvironmentalDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABGetEnvironmentalDataModel.h; sourceTree = "<group>"; };
+		C76D4A881BFD753200936660 /* NEUABGetEnvironmentalDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABGetEnvironmentalDataModel.m; sourceTree = "<group>"; };
+		C76D4A8A1BFD76A700936660 /* NEUABGetDeviceListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABGetDeviceListModel.h; sourceTree = "<group>"; };
+		C76D4A8B1BFD76A700936660 /* NEUABGetDeviceListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABGetDeviceListModel.m; sourceTree = "<group>"; };
+		C76D4A8D1BFD7BD200936660 /* NEUABEquipments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABEquipments.h; sourceTree = "<group>"; };
+		C76D4A8E1BFD7BD200936660 /* NEUABEquipments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABEquipments.m; sourceTree = "<group>"; };
 		F2B2A589E21765D8302DA14C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -187,6 +205,18 @@
 			children = (
 				1D1B97451BFD64B500C6F1E0 /* NEUABRegResultModel.h */,
 				1D1B97461BFD64B500C6F1E0 /* NEUABRegResultModel.m */,
+				C76D4A7E1BFD700C00936660 /* NEUABLogResultModel.h */,
+				C76D4A7F1BFD700C00936660 /* NEUABLogResultModel.m */,
+				C76D4A811BFD724300936660 /* NEUABRegDeviceModel.h */,
+				C76D4A821BFD724300936660 /* NEUABRegDeviceModel.m */,
+				C76D4A841BFD740500936660 /* NEUABLogoutDeviceModel.h */,
+				C76D4A851BFD740500936660 /* NEUABLogoutDeviceModel.m */,
+				C76D4A871BFD753200936660 /* NEUABGetEnvironmentalDataModel.h */,
+				C76D4A881BFD753200936660 /* NEUABGetEnvironmentalDataModel.m */,
+				C76D4A8A1BFD76A700936660 /* NEUABGetDeviceListModel.h */,
+				C76D4A8B1BFD76A700936660 /* NEUABGetDeviceListModel.m */,
+				C76D4A8D1BFD7BD200936660 /* NEUABEquipments.h */,
+				C76D4A8E1BFD7BD200936660 /* NEUABEquipments.m */,
 			);
 			name = NetModels;
 			sourceTree = "<group>";
@@ -593,8 +623,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C76D4A8F1BFD7BD200936660 /* NEUABEquipments.m in Sources */,
 				C75051071BFACFF6009B301F /* ACSimpleKeychain.m in Sources */,
 				C75275511BFC11A200E847C7 /* NEUABCounterView.m in Sources */,
+				C76D4A8C1BFD76A700936660 /* NEUABGetDeviceListModel.m in Sources */,
+				C76D4A891BFD753200936660 /* NEUABGetEnvironmentalDataModel.m in Sources */,
 				1D1B97431BFD601400C6F1E0 /* NEUABNetworkMngTool.m in Sources */,
 				C7626AC11BFB1C5100EF0589 /* NEUABDevMngTableViewController.m in Sources */,
 				C75275541BFC139100E847C7 /* NEUABThermometerView.m in Sources */,
@@ -607,13 +640,16 @@
 				1D8C40D71BF9AE5D006FA630 /* AppDelegate.m in Sources */,
 				C75050FD1BFACEA3009B301F /* NEUABResignViewController.m in Sources */,
 				1D8C40DA1BF9AE5D006FA630 /* NeueduAirBox.xcdatamodeld in Sources */,
+				C76D4A831BFD724300936660 /* NEUABRegDeviceModel.m in Sources */,
 				C75767F91BFCA26A009D2C8E /* NEUABDevMoniterViewController.m in Sources */,
 				C7626AC71BFB1CD000EF0589 /* NEUABEquipmentManageModel.m in Sources */,
 				C75767FB1BFCA26A009D2C8E /* NEUABDevMoniterHomePageViewController.m in Sources */,
+				C76D4A801BFD700C00936660 /* NEUABLogResultModel.m in Sources */,
 				C757680B1BFCA8B0009D2C8E /* PercentageChart.m in Sources */,
 				C75051031BFACF32009B301F /* MBProgressHUD+MoreExtentions.m in Sources */,
 				C75275571BFC15DF00E847C7 /* NEUABThermometerTubeView.m in Sources */,
 				C7626ACB1BFB1DAC00EF0589 /* NEUABAddDevMngViewController.m in Sources */,
+				C76D4A861BFD740500936660 /* NEUABLogoutDeviceModel.m in Sources */,
 				1D8C40FC1BF9C2A2006FA630 /* NEUABHomeViewController.m in Sources */,
 				C757680C1BFCA8B0009D2C8E /* PercentageChartLayer.m in Sources */,
 				1D8C40D41BF9AE5D006FA630 /* main.m in Sources */,
