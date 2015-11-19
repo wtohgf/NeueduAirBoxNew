@@ -44,6 +44,47 @@ static NEUABNetworkMngTool* tool;
     }];
 }
 
+//2.用户登录  GET
+-(void)userLogAccount:(NSString *)account Password:(NSString *)password{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:LOGAPI parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        NSArray *array = (NSArray*)responseObject;
+        NSDictionary*dict = [array lastObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 
+}
+
+//3.
+-(void)GetequipNoAccount:(NSString *)account{
+
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:GetequAPI parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        NSArray *array = (NSArray*)responseObject;
+        NSDictionary*dict = [array lastObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
+
+}
+
+//4.注册设备
+-(void)RegequipAccount:(NSString *)account Equipment:(NSString *)Equipment Dvicescode:(NSString *)dvicescode{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:RegequipAPI parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        NSArray *array = (NSArray*)responseObject;
+        NSDictionary*dict = [array lastObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+}
+
+//5.
 
 @end
