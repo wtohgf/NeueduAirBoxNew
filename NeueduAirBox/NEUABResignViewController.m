@@ -294,12 +294,12 @@ static int count = 0;
 
     //NSLog(@"vercode");
     //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    if (_name.text.length||_phone.text.length||_passwords.text.length==0) {
+    if (_name.text.length==0||_phone.text.length==0||_passwords.text.length==0) {
         UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入昵称，手机号或密码" delegate:nil cancelButtonTitle:@"确定"otherButtonTitles:nil, nil];
         [alertView show];
 
     }
-     else if (_name.text.length&&[self checkTel:_phone.text]&&_passwords.text.length!=0 ) {
+     else if (_name.text.length!=0&&[self checkTel:_phone.text]&&_passwords.text.length!=0 ) {
         [MBProgressHUD showTipToWindow:@"正在发送中"];
         [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:_phone.text zone:@"86" customIdentifier:nil result:^(NSError *error) {
             if (!error) {
