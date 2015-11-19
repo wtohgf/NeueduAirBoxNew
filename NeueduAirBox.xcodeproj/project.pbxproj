@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		061EFA97AD586FFB6D7AB539 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B2A589E21765D8302DA14C /* libPods.a */; };
-		1D64BD081BFB0E1700D056AD /* NEUABDevMoniterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D64BD071BFB0E1700D056AD /* NEUABDevMoniterViewController.m */; };
 		1D64BD431BFC1AC600D056AD /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D64BD421BFC1AC600D056AD /* SMS_SDK.framework */; };
 		1D64BD681BFC1C7600D056AD /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D64BD671BFC1C7600D056AD /* MOBFoundation.framework */; };
 		1D64BD6A1BFC225100D056AD /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D64BD691BFC225100D056AD /* libicucore.dylib */; };
@@ -24,7 +23,6 @@
 		1D8C40F11BF9AE5E006FA630 /* NeueduAirBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C40F01BF9AE5E006FA630 /* NeueduAirBoxTests.m */; };
 		1D8C40FC1BF9C2A2006FA630 /* NEUABHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C40FB1BF9C2A2006FA630 /* NEUABHomeViewController.m */; };
 		1D8C41081BF9CF8F006FA630 /* LogReg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C41071BF9CF8F006FA630 /* LogReg.storyboard */; };
-		1D8C410C1BF9CFC4006FA630 /* DevMoniter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C410B1BF9CFC4006FA630 /* DevMoniter.storyboard */; };
 		1D8C410E1BF9CFD3006FA630 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C410D1BF9CFD3006FA630 /* Setting.storyboard */; };
 		1D8C41101BF9CFE0006FA630 /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C410F1BF9CFE0006FA630 /* Other.storyboard */; };
 		1D8C41131BF9D78A006FA630 /* NEUABBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C41121BF9D78A006FA630 /* NEUABBaseViewController.m */; };
@@ -36,6 +34,17 @@
 		C75275541BFC139100E847C7 /* NEUABThermometerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C75275531BFC139100E847C7 /* NEUABThermometerView.m */; };
 		C75275571BFC15DF00E847C7 /* NEUABThermometerTubeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C75275561BFC15DF00E847C7 /* NEUABThermometerTubeView.m */; };
 		C752755A1BFC16FF00E847C7 /* NEUABThermometerSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C75275591BFC16FF00E847C7 /* NEUABThermometerSummaryView.m */; };
+		C75767F91BFCA26A009D2C8E /* NEUABDevMoniterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C75767F31BFCA26A009D2C8E /* NEUABDevMoniterViewController.m */; };
+		C75767FA1BFCA26A009D2C8E /* DevMoniter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75767F41BFCA26A009D2C8E /* DevMoniter.storyboard */; };
+		C75767FB1BFCA26A009D2C8E /* NEUABDevMoniterHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C75767F61BFCA26A009D2C8E /* NEUABDevMoniterHomePageViewController.m */; };
+		C75767FC1BFCA26A009D2C8E /* NEUABDevHumidityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C75767F81BFCA26A009D2C8E /* NEUABDevHumidityViewController.m */; };
+		C75767FE1BFCA81A009D2C8E /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75767FD1BFCA81A009D2C8E /* CoreText.framework */; };
+		C75768001BFCA824009D2C8E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75767FF1BFCA824009D2C8E /* QuartzCore.framework */; };
+		C75768021BFCA82E009D2C8E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75768011BFCA82E009D2C8E /* UIKit.framework */; };
+		C75768041BFCA838009D2C8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75768031BFCA838009D2C8E /* Foundation.framework */; };
+		C75768061BFCA846009D2C8E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75768051BFCA846009D2C8E /* CoreGraphics.framework */; };
+		C757680B1BFCA8B0009D2C8E /* PercentageChart.m in Sources */ = {isa = PBXBuildFile; fileRef = C75768081BFCA8B0009D2C8E /* PercentageChart.m */; };
+		C757680C1BFCA8B0009D2C8E /* PercentageChartLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C757680A1BFCA8B0009D2C8E /* PercentageChartLayer.m */; };
 		C7626AC01BFB1C5100EF0589 /* DevMng.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7626ABB1BFB1C5100EF0589 /* DevMng.storyboard */; };
 		C7626AC11BFB1C5100EF0589 /* NEUABDevMngTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7626ABD1BFB1C5100EF0589 /* NEUABDevMngTableViewController.m */; };
 		C7626AC21BFB1C5100EF0589 /* NEUABDevMngTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7626ABF1BFB1C5100EF0589 /* NEUABDevMngTableViewCell.m */; };
@@ -55,8 +64,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D64BD061BFB0E1700D056AD /* NEUABDevMoniterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABDevMoniterViewController.h; sourceTree = "<group>"; };
-		1D64BD071BFB0E1700D056AD /* NEUABDevMoniterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABDevMoniterViewController.m; sourceTree = "<group>"; };
 		1D64BD421BFC1AC600D056AD /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		1D64BD671BFC1C7600D056AD /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
 		1D64BD691BFC225100D056AD /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
@@ -78,7 +85,6 @@
 		1D8C40FA1BF9C2A2006FA630 /* NEUABHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABHomeViewController.h; sourceTree = "<group>"; };
 		1D8C40FB1BF9C2A2006FA630 /* NEUABHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABHomeViewController.m; sourceTree = "<group>"; };
 		1D8C41071BF9CF8F006FA630 /* LogReg.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LogReg.storyboard; sourceTree = "<group>"; };
-		1D8C410B1BF9CFC4006FA630 /* DevMoniter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DevMoniter.storyboard; sourceTree = "<group>"; };
 		1D8C410D1BF9CFD3006FA630 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		1D8C410F1BF9CFE0006FA630 /* Other.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Other.storyboard; sourceTree = "<group>"; };
 		1D8C41111BF9D78A006FA630 /* NEUABBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABBaseViewController.h; sourceTree = "<group>"; };
@@ -101,6 +107,22 @@
 		C75275561BFC15DF00E847C7 /* NEUABThermometerTubeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABThermometerTubeView.m; sourceTree = "<group>"; };
 		C75275581BFC16FF00E847C7 /* NEUABThermometerSummaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABThermometerSummaryView.h; sourceTree = "<group>"; };
 		C75275591BFC16FF00E847C7 /* NEUABThermometerSummaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABThermometerSummaryView.m; sourceTree = "<group>"; };
+		C75767F21BFCA26A009D2C8E /* NEUABDevMoniterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABDevMoniterViewController.h; sourceTree = "<group>"; };
+		C75767F31BFCA26A009D2C8E /* NEUABDevMoniterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABDevMoniterViewController.m; sourceTree = "<group>"; };
+		C75767F41BFCA26A009D2C8E /* DevMoniter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DevMoniter.storyboard; sourceTree = "<group>"; };
+		C75767F51BFCA26A009D2C8E /* NEUABDevMoniterHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABDevMoniterHomePageViewController.h; sourceTree = "<group>"; };
+		C75767F61BFCA26A009D2C8E /* NEUABDevMoniterHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABDevMoniterHomePageViewController.m; sourceTree = "<group>"; };
+		C75767F71BFCA26A009D2C8E /* NEUABDevHumidityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABDevHumidityViewController.h; sourceTree = "<group>"; };
+		C75767F81BFCA26A009D2C8E /* NEUABDevHumidityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABDevHumidityViewController.m; sourceTree = "<group>"; };
+		C75767FD1BFCA81A009D2C8E /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		C75767FF1BFCA824009D2C8E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C75768011BFCA82E009D2C8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C75768031BFCA838009D2C8E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C75768051BFCA846009D2C8E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C75768071BFCA8B0009D2C8E /* PercentageChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PercentageChart.h; sourceTree = "<group>"; };
+		C75768081BFCA8B0009D2C8E /* PercentageChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PercentageChart.m; sourceTree = "<group>"; };
+		C75768091BFCA8B0009D2C8E /* PercentageChartLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PercentageChartLayer.h; sourceTree = "<group>"; };
+		C757680A1BFCA8B0009D2C8E /* PercentageChartLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PercentageChartLayer.m; sourceTree = "<group>"; };
 		C7626ABB1BFB1C5100EF0589 /* DevMng.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DevMng.storyboard; sourceTree = "<group>"; };
 		C7626ABC1BFB1C5100EF0589 /* NEUABDevMngTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEUABDevMngTableViewController.h; sourceTree = "<group>"; };
 		C7626ABD1BFB1C5100EF0589 /* NEUABDevMngTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEUABDevMngTableViewController.m; sourceTree = "<group>"; };
@@ -119,6 +141,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C75768061BFCA846009D2C8E /* CoreGraphics.framework in Frameworks */,
+				C75768041BFCA838009D2C8E /* Foundation.framework in Frameworks */,
+				C75768021BFCA82E009D2C8E /* UIKit.framework in Frameworks */,
+				C75768001BFCA824009D2C8E /* QuartzCore.framework in Frameworks */,
+				C75767FE1BFCA81A009D2C8E /* CoreText.framework in Frameworks */,
 				1D64BD721BFC228600D056AD /* libstdc++.dylib in Frameworks */,
 				1D64BD701BFC227700D056AD /* JavaScriptCore.framework in Frameworks */,
 				1D64BD6E1BFC226A00D056AD /* MessageUI.framework in Frameworks */,
@@ -227,6 +254,10 @@
 		1D8C40FF1BF9C81B006FA630 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C75768071BFCA8B0009D2C8E /* PercentageChart.h */,
+				C75768081BFCA8B0009D2C8E /* PercentageChart.m */,
+				C75768091BFCA8B0009D2C8E /* PercentageChartLayer.h */,
+				C757680A1BFCA8B0009D2C8E /* PercentageChartLayer.m */,
 				C752755B1BFC194400E847C7 /* 温度计工具 */,
 			);
 			name = Views;
@@ -278,9 +309,13 @@
 		1D8C41041BF9CF5D006FA630 /* 实时查看 */ = {
 			isa = PBXGroup;
 			children = (
-				1D64BD061BFB0E1700D056AD /* NEUABDevMoniterViewController.h */,
-				1D64BD071BFB0E1700D056AD /* NEUABDevMoniterViewController.m */,
-				1D8C410B1BF9CFC4006FA630 /* DevMoniter.storyboard */,
+				C75767F21BFCA26A009D2C8E /* NEUABDevMoniterViewController.h */,
+				C75767F31BFCA26A009D2C8E /* NEUABDevMoniterViewController.m */,
+				C75767F41BFCA26A009D2C8E /* DevMoniter.storyboard */,
+				C75767F51BFCA26A009D2C8E /* NEUABDevMoniterHomePageViewController.h */,
+				C75767F61BFCA26A009D2C8E /* NEUABDevMoniterHomePageViewController.m */,
+				C75767F71BFCA26A009D2C8E /* NEUABDevHumidityViewController.h */,
+				C75767F81BFCA26A009D2C8E /* NEUABDevHumidityViewController.m */,
 			);
 			name = "实时查看";
 			sourceTree = "<group>";
@@ -313,6 +348,11 @@
 		7680D5C5E72CB784D75B4219 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C75768051BFCA846009D2C8E /* CoreGraphics.framework */,
+				C75768031BFCA838009D2C8E /* Foundation.framework */,
+				C75768011BFCA82E009D2C8E /* UIKit.framework */,
+				C75767FF1BFCA824009D2C8E /* QuartzCore.framework */,
+				C75767FD1BFCA81A009D2C8E /* CoreText.framework */,
 				1D64BD711BFC228600D056AD /* libstdc++.dylib */,
 				1D64BD6F1BFC227700D056AD /* JavaScriptCore.framework */,
 				1D64BD6D1BFC226A00D056AD /* MessageUI.framework */,
@@ -470,7 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D8C40E51BF9AE5D006FA630 /* LaunchScreen.xib in Resources */,
-				1D8C410C1BF9CFC4006FA630 /* DevMoniter.storyboard in Resources */,
+				C75767FA1BFCA26A009D2C8E /* DevMoniter.storyboard in Resources */,
 				C7626AC01BFB1C5100EF0589 /* DevMng.storyboard in Resources */,
 				1D8C41081BF9CF8F006FA630 /* LogReg.storyboard in Resources */,
 				1D8C41101BF9CFE0006FA630 /* Other.storyboard in Resources */,
@@ -533,17 +573,21 @@
 				C75275541BFC139100E847C7 /* NEUABThermometerView.m in Sources */,
 				C752755A1BFC16FF00E847C7 /* NEUABThermometerSummaryView.m in Sources */,
 				C75050FC1BFACEA3009B301F /* NEUABLogRegViewController.m in Sources */,
+				C75767FC1BFCA26A009D2C8E /* NEUABDevHumidityViewController.m in Sources */,
 				1D8C41131BF9D78A006FA630 /* NEUABBaseViewController.m in Sources */,
 				C7626AC21BFB1C5100EF0589 /* NEUABDevMngTableViewCell.m in Sources */,
 				1D8C40D71BF9AE5D006FA630 /* AppDelegate.m in Sources */,
 				C75050FD1BFACEA3009B301F /* NEUABResignViewController.m in Sources */,
-				1D64BD081BFB0E1700D056AD /* NEUABDevMoniterViewController.m in Sources */,
 				1D8C40DA1BF9AE5D006FA630 /* NeueduAirBox.xcdatamodeld in Sources */,
+				C75767F91BFCA26A009D2C8E /* NEUABDevMoniterViewController.m in Sources */,
 				C7626AC71BFB1CD000EF0589 /* NEUABEquipmentManageModel.m in Sources */,
+				C75767FB1BFCA26A009D2C8E /* NEUABDevMoniterHomePageViewController.m in Sources */,
+				C757680B1BFCA8B0009D2C8E /* PercentageChart.m in Sources */,
 				C75051031BFACF32009B301F /* MBProgressHUD+MoreExtentions.m in Sources */,
 				C75275571BFC15DF00E847C7 /* NEUABThermometerTubeView.m in Sources */,
 				C7626ACB1BFB1DAC00EF0589 /* NEUABAddDevMngViewController.m in Sources */,
 				1D8C40FC1BF9C2A2006FA630 /* NEUABHomeViewController.m in Sources */,
+				C757680C1BFCA8B0009D2C8E /* PercentageChartLayer.m in Sources */,
 				1D8C40D41BF9AE5D006FA630 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

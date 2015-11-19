@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -8,6 +8,7 @@
         <scene sceneID="O7n-09-o3A">
             <objects>
                 <navigationController storyboardIdentifier="DevMoniterNav" id="D70-lc-4C0" customClass="NEUABBaseViewController" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6JA-a0-Sm8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -23,21 +24,120 @@
         <!--实时查看-->
         <scene sceneID="fuO-IO-CbG">
             <objects>
-                <viewController id="bMm-yW-Tnb" customClass="NEUABDevMoniterViewController" sceneMemberID="viewController">
+                <viewController id="bMm-yW-Tnb" customClass="NEUABDevMoniterHomePageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DZ3-MT-95g"/>
                         <viewControllerLayoutGuide type="bottom" id="dWO-p7-9NR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZUK-U0-2iX">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q04-cy-WUv">
+                                <rect key="frame" x="26" y="188" width="30" height="30"/>
+                                <state key="normal" title="温度">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toThermometer:" destination="bMm-yW-Tnb" eventType="touchUpInside" id="PkM-WH-i2x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRe-QB-Vpq">
+                                <rect key="frame" x="197" y="188" width="30" height="30"/>
+                                <state key="normal" title="湿度">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Humidity:" destination="bMm-yW-Tnb" eventType="touchUpInside" id="we8-Ze-CeZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="实时查看" id="Qaz-rp-o0h"/>
+                    <connections>
+                        <segue destination="8ZU-Mx-t40" kind="show" identifier="toThermometer" id="LMl-OS-aC4"/>
+                        <segue destination="DUC-wx-vys" kind="show" identifier="Humidity" id="WvJ-hI-wpl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSy-k6-8sZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="205" y="368"/>
+            <point key="canvasLocation" x="104.5" y="327.5"/>
+        </scene>
+        <!--湿度-->
+        <scene sceneID="Ozb-lI-Ho1">
+            <objects>
+                <viewController title="湿度" id="DUC-wx-vys" customClass="NEUABDevHumidityViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mug-vf-QCp"/>
+                        <viewControllerLayoutGuide type="bottom" id="lmr-b3-79w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E5c-7B-sW9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hvi-2V-ygN" customClass="PercentageChart">
+                                <rect key="frame" x="39" y="258" width="311" height="270"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCn-Rh-RNE">
+                                <rect key="frame" x="176" y="596" width="30" height="30"/>
+                                <state key="normal" title="go">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ongo:" destination="DUC-wx-vys" eventType="touchUpInside" id="ItO-VN-HwI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="chart" destination="Hvi-2V-ygN" id="Wv9-9x-9oE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WTa-Wp-LtI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.5" y="1149.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UDu-WY-2br">
+            <objects>
+                <viewController id="sZg-jo-Dgg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aRW-Bc-6eu"/>
+                        <viewControllerLayoutGuide type="bottom" id="QPl-nP-pQZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KVC-gF-qH6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q7N-qB-0n4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="510.5" y="1047.5"/>
+        </scene>
+        <!--温度-->
+        <scene sceneID="ehM-TA-kaY">
+            <objects>
+                <viewController title="温度" id="8ZU-Mx-t40" customClass="NEUABDevMoniterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="adc-lX-s4X"/>
+                        <viewControllerLayoutGuide type="bottom" id="NEj-Z7-XAV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GnE-dO-ZQO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LMh-yi-QuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="583.5" y="336.5"/>
         </scene>
     </scenes>
 </document>
