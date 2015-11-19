@@ -9,6 +9,9 @@
 #import "NEUABDevMngTableViewController.h"
 #import "NEUABEquipmentManageModel.h"
 #import "NEUABDevMngTableViewCell.h"
+#import "NEUABNetworkMngTool.h"
+#import "NEUABRegDeviceModel.h"
+
 @interface NEUABDevMngTableViewController ()
 @property (strong,nonatomic) NSMutableArray * DevMnglist;
 @end
@@ -30,7 +33,12 @@
     return _DevMnglist;
     
 }
+-(void)viewWillAppear:(BOOL)animated{
 
+
+
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backPage:)];

@@ -14,6 +14,6 @@
 @property(copy,nonatomic)NSString* msg;
 @property(strong,nonatomic)NSMutableArray* equipment;
 
-+(instancetype)getDeviceListModelWithDict:(NSDictionary*)dict;
++(instancetype)getDeviceListModelWithmodel:(NEUABEquipments*)dict;
 
 @end
