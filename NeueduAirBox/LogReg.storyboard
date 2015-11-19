@@ -18,7 +18,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lic-t7-4pC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-258" y="282"/>
+            <point key="canvasLocation" x="-270" y="286"/>
         </scene>
         <!--Log Reg View Controller-->
         <scene sceneID="yOk-0B-wtS">
@@ -32,20 +32,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JFZ-cH-Nsa">
-                                <rect key="frame" x="38" y="505" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecG-Ei-QtB">
-                                <rect key="frame" x="175" y="458" width="75" height="30"/>
-                                <state key="normal" title="发送验证码">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendSMS:" destination="TdS-sJ-Kh4" eventType="touchUpInside" id="e5C-Qd-IhS"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="048-XG-lyg">
                                 <rect key="frame" x="175" y="523" width="75" height="17"/>
                                 <state key="normal">
@@ -55,21 +41,11 @@
                                     <action selector="checkSMS:" destination="TdS-sJ-Kh4" eventType="touchDragOutside" id="aTt-BM-fQt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TL0-si-h3Q">
-                                <rect key="frame" x="175" y="505" width="75" height="30"/>
-                                <state key="normal" title="确认验证码">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="checkSMS:" destination="TdS-sJ-Kh4" eventType="touchUpInside" id="9El-jq-5cs"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ul9-O6-iNC"/>
                     <connections>
-                        <outlet property="SMSCode" destination="JFZ-cH-Nsa" id="mER-C8-wDN"/>
                         <segue destination="GGe-2s-1NI" kind="show" identifier="toResign" id="CAu-Wy-FDS"/>
                     </connections>
                 </viewController>
@@ -90,10 +66,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="TdS-sJ-Kh4" kind="show" identifier="tologon" id="a7R-iL-cLs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yoB-Ds-rwo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1159" y="257"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WrM-Ej-eZe"/>
+    </inferredMetricsTieBreakers>
 </document>

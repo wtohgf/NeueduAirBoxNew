@@ -135,31 +135,31 @@
 //    [self presentViewController:reg animated:YES completion:^{
 //        
 //    }];
-//
-//    [self performSegueWithIdentifier:@"toResign" sender:self];
-//
+
+    [self performSegueWithIdentifier:@"toResign" sender:self];
+
     
 }
-- (IBAction)sendSMS:(UIButton *)sender {
-    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:@"13624259320" zone:@"86" customIdentifier:nil result:^(NSError *error) {
-        if (!error) {
-            NSLog(@"获取验证码成功");
-        } else {
-            NSLog(@"错误码：%@",error.debugDescription);
-        }
-    }];
-}
-- (IBAction)checkSMS:(UIButton *)sender {
-        
-    [SMSSDK commitVerificationCode:_SMSCode.text phoneNumber:@"13624259320" zone:@"86" result:^(NSError *error) {
-        if (!error) {
-            NSLog(@"验证成功");
-        } else {
-            NSLog(@"错误码：%@",error.debugDescription);
-        }
-    }];
-    
-}
+//- (IBAction)sendSMS:(UIButton *)sender {
+//    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:@"13074856970" zone:@"86" customIdentifier:nil result:^(NSError *error) {
+//        if (!error) {
+//            NSLog(@"获取验证码成功");
+//        } else {
+//            NSLog(@"错误码：%@",error.debugDescription);
+//        }
+//    }];
+//}
+//- (IBAction)checkSMS:(UIButton *)sender {
+//        
+//    [SMSSDK commitVerificationCode:_SMSCode.text phoneNumber:@"13074856970" zone:@"86" result:^(NSError *error) {
+//        if (!error) {
+//            NSLog(@"验证成功");
+//        } else {
+//            NSLog(@"错误码：%@",error.debugDescription);
+//        }
+//    }];
+//    
+//}
 
 
 #pragma mark  记住密码功能
