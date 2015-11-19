@@ -77,15 +77,29 @@ static int count = 0;
 #pragma mark 添加子控件
 -(void)addsubviews{
     
+    UILabel *clevername = [[UILabel alloc]init];
+    clevername.frame = CGRectMake(leftMargin, upMargin+100.f-2*kMargin, labelWidth, labelHeight);
+    clevername.text = @"昵称";
+    clevername.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:clevername];
+    
+    UITextField *name = [[UITextField alloc]init];
+    _name = name;
+    name.frame = CGRectMake(leftMargin+labelWidth+kMargin, upMargin+100.f-2*kMargin, [UIScreen mainScreen].bounds.size.width-leftMargin-rightMargin-labelWidth-kMargin, labelHeight);
+    [self.view addSubview:name];
+     name.placeholder=@"请输入昵称";
+    name.borderStyle=UITextBorderStyleRoundedRect;
+    
     UILabel * account = [[UILabel alloc]init];
-    account.frame = CGRectMake(leftMargin, upMargin+100.f, labelWidth, labelHeight);
+    account.frame = CGRectMake(leftMargin, upMargin+100.f-kMargin+labelHeight, labelWidth, labelHeight);
     account.text = @"手机号";
     account.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:account];
+   
     
     UITextField *phoneTextFiled = [[UITextField alloc]init];
     _phone = phoneTextFiled;
-    phoneTextFiled.frame = CGRectMake(leftMargin+labelWidth+kMargin, upMargin+100.f, [UIScreen mainScreen].bounds.size.width-leftMargin-rightMargin-labelWidth-kMargin, labelHeight);
+    phoneTextFiled.frame = CGRectMake(leftMargin+labelWidth+kMargin, upMargin+100.f-kMargin+labelHeight, [UIScreen mainScreen].bounds.size.width-leftMargin-rightMargin-labelWidth-kMargin, labelHeight);
     
     [self.view addSubview:phoneTextFiled];
     phoneTextFiled.textColor = [UIColor blueColor];
@@ -97,14 +111,14 @@ static int count = 0;
     phoneTextFiled.borderStyle=UITextBorderStyleRoundedRect;
     
     UILabel * password  = [[UILabel alloc]init];
-    password.frame = CGRectMake(leftMargin, upMargin+labelHeight+100.f, labelWidth, labelHeight+2*kMargin);
+    password.frame = CGRectMake(leftMargin,  2*labelHeight+upMargin+100.f-kMargin, labelWidth, labelHeight+2*kMargin);
     password.text= @"密码";
     password.textAlignment =NSTextAlignmentCenter;
     [self.view addSubview:password];
     
     UITextField * passwordTextfiled  =[[UITextField alloc]init];
     _passwords = passwordTextfiled;
-    passwordTextfiled.frame = CGRectMake(leftMargin+labelWidth+kMargin, labelHeight+kMargin+upMargin+100.f,[UIScreen mainScreen].bounds.size.width-leftMargin-rightMargin-labelWidth-kMargin, labelHeight);
+    passwordTextfiled.frame = CGRectMake(leftMargin+labelWidth+kMargin, 2*labelHeight+upMargin+100.f,[UIScreen mainScreen].bounds.size.width-leftMargin-rightMargin-labelWidth-kMargin, labelHeight);
     passwordTextfiled.placeholder = @"请输入密码";
     passwordTextfiled.borderStyle = UITextBorderStyleRoundedRect;
     passwordTextfiled.secureTextEntry = YES;
@@ -120,7 +134,7 @@ static int count = 0;
     //输入验证码
     UITextField * SMSCodeTextfiled  =[[UITextField alloc]init];
     _SMSCode = SMSCodeTextfiled;
-    SMSCodeTextfiled.frame = CGRectMake(leftMargin+labelWidth+kMargin, 2*upMargin+labelHeight+100.f,labelWidth+50.f, labelHeight);
+    SMSCodeTextfiled.frame = CGRectMake(leftMargin+labelWidth+kMargin, 2*upMargin+2*labelHeight+100.f,labelWidth+50.f, labelHeight);
     SMSCodeTextfiled.borderStyle = UITextBorderStyleRoundedRect;
     [self.view addSubview:SMSCodeTextfiled];
     

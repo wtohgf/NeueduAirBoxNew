@@ -15,6 +15,10 @@
 
 #define RegequipAPI @"http://www.neuedufuhuaqi.com/appcode/?act=GET_UserRegisteredequipment&account=13381109915&Equipment＝KQHZ00000001&dvicescode＝kqhz62"
 
+#define LogoutequipAPI @"http://www.neuedufuhuaqi.com/appcode/?act=GET_UserDeleteequipment&account=13381109915&Equipment＝KQHZ00000001"
+
+#define GetinfoAPI @"http://www.neuedufuhuaqi.com/appcode/?act=GET_UserAcquisitionparameters&account=13381109915&Equipment＝KQHZ00000001"
+
 @interface NEUABNetworkMngTool : NSObject
 +(instancetype)sharedNetworkMngTool;
 

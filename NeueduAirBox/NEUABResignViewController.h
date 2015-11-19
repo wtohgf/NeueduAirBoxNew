@@ -20,6 +20,8 @@
 @property(weak,nonatomic)UITextField* phone;
 @property(weak,nonatomic)UITextField* passwords;
 @property(weak,nonatomic)UITextField* SMSCode;
+@property(weak,nonatomic)UITextField* name;
+
 @property(assign,nonatomic)NSTimer* timer1;
 @property(assign,nonatomic)NSTimer* timer2;
 @property(assign,nonatomic)NSTimer* timer3;
