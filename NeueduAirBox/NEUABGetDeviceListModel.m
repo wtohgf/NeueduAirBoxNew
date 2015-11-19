@@ -10,24 +10,7 @@
 
 @implementation NEUABGetDeviceListModel
 
-/*+(instancetype)GroupModelWithDict:(NSDictionary *)dict{
-    GroupModel* group = [[GroupModel alloc]init];
-    if (group) {
-        //如果模型中再包含子模型 不要用kvc了
-        //[group setValuesForKeysWithDictionary:dict];
-        group.title = [dict objectForKey:@"title"];
-        
-        group.Cars = [NSMutableArray array];
-        //通过key 拿到需要转换成模型的那个数组
-        NSArray* cars = [dict objectForKey:@"cars"];
-        for (int i=0; i<cars.count; i++) {
-            NSDictionary* dict = cars[i];
-            Car* car = [Car CarWithDict:dict];
-            [group.Cars addObject:car];
-        }
-    }
-    return group;
-}*/
+
 
 +(instancetype)getDeviceListModelWithDict:(NSDictionary *)dict{
 
@@ -47,6 +30,12 @@
     }
     return model;
     
+}
+
+- (NSString *)description
+{
+    NSString* string = [NSString stringWithFormat:@"msg=%@ Equipment %@", self.msg,self.equipment];
+    return string;
 }
 
 @end

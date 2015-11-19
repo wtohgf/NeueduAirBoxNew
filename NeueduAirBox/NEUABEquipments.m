@@ -21,4 +21,10 @@
     return equ;
 }
 
+-(NSString *)description{
+    
+    NSString* string=[NSString stringWithFormat:@"Equipment=%@ dvicename=%@ dviceState=%@ dviceaddress=%@",self.Equipment,self.dvicename,self.dviceState,self.dviceaddress];
+    return string;
+}
+
 @end
