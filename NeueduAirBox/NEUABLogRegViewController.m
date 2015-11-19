@@ -11,6 +11,7 @@
 #import <MBProgressHUD.h>
 #import "MBProgressHUD+MoreExtentions.h"
 #import <SMS_SDK/SMSSDK.h>
+#import "NEUABNetworkMngTool.h"
 
 @interface NEUABLogRegViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *SMSCode;
@@ -130,36 +131,47 @@
 
 #pragma mark  注册功能
 -(void)resignButton:(UIButton*)sender{
+    
+    //测试注册网络接口 Case1 正常逻辑 OK
+    [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"haha" Account:@"13622223333" Password:@"123456"];
+    
+    //测试注册网络接口 Case2 异常逻辑
+    [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"haha" Account:@"13622223333" Password:@"123456"];
+    
+    //测试注册网络接口 Case3 异常逻辑
+    [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"haha" Account:@"63622223334" Password:@"123456"];
+
+    
 //    
 //    RegViewController* reg = [[RegViewController alloc] init];
 //    [self presentViewController:reg animated:YES completion:^{
 //        
 //    }];
-//
-//    [self performSegueWithIdentifier:@"toResign" sender:self];
-//
+
+    [self performSegueWithIdentifier:@"toResign" sender:self];
+
     
 }
-- (IBAction)sendSMS:(UIButton *)sender {
-    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:@"13624259320" zone:@"86" customIdentifier:nil result:^(NSError *error) {
-        if (!error) {
-            NSLog(@"获取验证码成功");
-        } else {
-            NSLog(@"错误码：%@",error.debugDescription);
-        }
-    }];
-}
-- (IBAction)checkSMS:(UIButton *)sender {
-        
-    [SMSSDK commitVerificationCode:_SMSCode.text phoneNumber:@"13624259320" zone:@"86" result:^(NSError *error) {
-        if (!error) {
-            NSLog(@"验证成功");
-        } else {
-            NSLog(@"错误码：%@",error.debugDescription);
-        }
-    }];
-    
-}
+//- (IBAction)sendSMS:(UIButton *)sender {
+//    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:@"13074856970" zone:@"86" customIdentifier:nil result:^(NSError *error) {
+//        if (!error) {
+//            NSLog(@"获取验证码成功");
+//        } else {
+//            NSLog(@"错误码：%@",error.debugDescription);
+//        }
+//    }];
+//}
+//- (IBAction)checkSMS:(UIButton *)sender {
+//        
+//    [SMSSDK commitVerificationCode:_SMSCode.text phoneNumber:@"13074856970" zone:@"86" result:^(NSError *error) {
+//        if (!error) {
+//            NSLog(@"验证成功");
+//        } else {
+//            NSLog(@"错误码：%@",error.debugDescription);
+//        }
+//    }];
+//    
+//}
 
 
 #pragma mark  记住密码功能
