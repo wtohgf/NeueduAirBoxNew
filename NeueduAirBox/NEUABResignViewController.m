@@ -126,7 +126,7 @@ static int count = 0;
     
     //验证码
     UILabel * vercode= [[UILabel alloc]init];
-    vercode.frame = CGRectMake(leftMargin, 2*upMargin+labelHeight+100.f, labelWidth, labelHeight);
+    vercode.frame = CGRectMake(leftMargin, upMargin+3*labelHeight+100.f+kMargin, labelWidth, labelHeight);
     vercode.text = @"验证码";
     vercode.textAlignment =NSTextAlignmentCenter;
     [self.view addSubview:vercode];
@@ -134,13 +134,13 @@ static int count = 0;
     //输入验证码
     UITextField * SMSCodeTextfiled  =[[UITextField alloc]init];
     _SMSCode = SMSCodeTextfiled;
-    SMSCodeTextfiled.frame = CGRectMake(leftMargin+labelWidth+kMargin, 2*upMargin+2*labelHeight+100.f,labelWidth+50.f, labelHeight);
+    SMSCodeTextfiled.frame = CGRectMake(leftMargin+labelWidth+kMargin, upMargin+3*labelHeight+100.f+kMargin,labelWidth+50.f, labelHeight);
     SMSCodeTextfiled.borderStyle = UITextBorderStyleRoundedRect;
     [self.view addSubview:SMSCodeTextfiled];
     
     //获取验证码
     UIButton * getver = [[UIButton alloc]init];
-    getver.frame = CGRectMake(leftMargin+2*labelWidth+kMargin+80.f, 2*upMargin+labelHeight+100.f, labelWidth+50.f, labelHeight);
+    getver.frame = CGRectMake(leftMargin+2*labelWidth+kMargin+80.f, upMargin+3*labelHeight+100.f+kMargin, labelWidth+50.f, labelHeight);
     [getver setTitle:@"获取验证码" forState:UIControlStateNormal];
     //getver.font = [UIFont fontWithName:@"Helvetica" size:15];
     [getver setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
@@ -148,7 +148,7 @@ static int count = 0;
     [self.view addSubview:getver];
     
     UILabel* time = [[UILabel alloc]init];
-    time.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-labelWidth-100.f)*0.5, 3*upMargin+labelHeight+100.f, labelWidth+100.f, labelHeight);
+    time.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-labelWidth-100.f)*0.5, upMargin+4*labelHeight+100.f+2*kMargin, labelWidth+100.f, labelHeight);
     time.numberOfLines = 0;
     time.textAlignment = NSTextAlignmentCenter;
     time.font = [UIFont fontWithName:@"Helvetica" size:15];
@@ -159,7 +159,7 @@ static int count = 0;
     
     //收不到短信验证码
     UIButton*repeatSMSBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    repeatSMSBtn.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-labelWidth-100.f)*0.5, 3*upMargin+labelHeight+100.f, labelWidth+100.f, labelHeight-10.f);
+    repeatSMSBtn.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-labelWidth-100.f)*0.5, upMargin+4*labelHeight+100.f+2*kMargin, labelWidth+100.f, labelHeight-10.f);
     [repeatSMSBtn setTitle:@"收不到短信验证码？" forState:UIControlStateNormal];
     [repeatSMSBtn addTarget:self action:@selector(CannotGetSMS:) forControlEvents:UIControlEventTouchUpInside];
     _repeatSMSBtn=repeatSMSBtn;
@@ -187,7 +187,7 @@ static int count = 0;
     NSString* str = [NSString stringWithFormat:@"%@:%@",@"我们将重新发送验证码短信到这个号码",_phone.text];
     UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"确认手机号码"message:str delegate:self cancelButtonTitle:@"取消"otherButtonTitles:@"确定", nil];
     [alertView show];
-    if ([self checkTel:_phone.text]&&_passwords.text.length!=0 ) {
+    if ([self checkTel:_phone.text]&&_passwords.text.length&&_name.text.length!=0 ) {
         //[MBProgressHUD showTipToWindow:@"正在发送中"];
         [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:_phone.text zone:@"86" customIdentifier:nil result:^(NSError *error) {
             if (!error) {
@@ -230,8 +230,8 @@ static int count = 0;
 
 #pragma mark 注册
 - (void)resign:(UIButton *)sender {
-    if (_phone.text.length==0||_passwords.text.length==0) {
-        UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入手机号或密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    if (_phone.text.length==0||_passwords.text.length==0||_name.text.length == 0) {
+        UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入昵称，手机号或密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertView show];
     }else if(_SMSCode.text.length == 0){
         UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入验证码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
@@ -294,12 +294,12 @@ static int count = 0;
 
     //NSLog(@"vercode");
     //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    if (_phone.text&&_passwords.text.length==0) {
-        UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入手机号或密码" delegate:nil cancelButtonTitle:@"确定"otherButtonTitles:nil, nil];
+    if (_name.text.length==0||_phone.text.length==0||_passwords.text.length==0) {
+        UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入昵称，手机号或密码" delegate:nil cancelButtonTitle:@"确定"otherButtonTitles:nil, nil];
         [alertView show];
 
     }
-     else if ([self checkTel:_phone.text]&&_passwords.text.length!=0 ) {
+     else if (_name.text.length!=0&&[self checkTel:_phone.text]&&_passwords.text.length!=0 ) {
         [MBProgressHUD showTipToWindow:@"正在发送中"];
         [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:_phone.text zone:@"86" customIdentifier:nil result:^(NSError *error) {
             if (!error) {
