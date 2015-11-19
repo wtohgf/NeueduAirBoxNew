@@ -68,7 +68,7 @@ CGFloat const kJBLineChartViewControllerChartDashedLineWidth = 2.0f;
 }
 
 -(void)backPage:(id)sender{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)viewWillAppear:(BOOL)animated{

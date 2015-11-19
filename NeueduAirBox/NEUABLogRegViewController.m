@@ -11,6 +11,7 @@
 #import <MBProgressHUD.h>
 #import "MBProgressHUD+MoreExtentions.h"
 #import <SMS_SDK/SMSSDK.h>
+#import "NEUABNetworkMngTool.h"
 
 @interface NEUABLogRegViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *SMSCode;
@@ -130,6 +131,17 @@
 
 #pragma mark  注册功能
 -(void)resignButton:(UIButton*)sender{
+    
+    //测试注册网络接口 Case1 正常逻辑 OK
+    [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"haha" Account:@"13622223333" Password:@"123456"];
+    
+    //测试注册网络接口 Case2 异常逻辑
+    [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"haha" Account:@"13622223333" Password:@"123456"];
+    
+    //测试注册网络接口 Case3 异常逻辑
+    [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"haha" Account:@"63622223334" Password:@"123456"];
+
+    
 //    
 //    RegViewController* reg = [[RegViewController alloc] init];
 //    [self presentViewController:reg animated:YES completion:^{
