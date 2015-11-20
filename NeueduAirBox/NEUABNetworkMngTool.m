@@ -34,6 +34,11 @@ static NEUABNetworkMngTool* tool;
     NSDictionary *parameters = @{@"clevername":cleverName,
                                  @"account":account,
                                  @"password":password};
+    NSLog(@"clename%@",cleverName)
+    ;
+    // 设置返回格式
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/json", nil];
     
     [manager POST:REGAPI parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
@@ -51,9 +56,10 @@ static NEUABNetworkMngTool* tool;
 }
 
 //2.用户登录  GET
--(void)userLogAccount:(NSString *)account Password:(NSString *)password{
+-(void)userLogAccount:(NSString *)account Password:(NSString *)password {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:LOGAPI parameters:@{@"account":account,
+    [manager GET:LOGAPI parameters:@{@"act":@"GET_UserLogon",
+                                     @"account":account,
                                      @"password":password} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         NSArray *array = (NSArray*)responseObject;
@@ -71,7 +77,8 @@ static NEUABNetworkMngTool* tool;
 -(void)GetequipNoAccount:(NSString *)account{
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:GetequAPI parameters:@{@"account":account
+    [manager GET:GetequAPI parameters:@{@"act":@"GET_UserAcquisitionequipment",
+                                        @"account":account
                                         } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         NSArray *array = (NSArray*)responseObject;
@@ -89,16 +96,17 @@ static NEUABNetworkMngTool* tool;
 }
 
 //4.注册设备
--(void)RegequipAccount:(NSString *)account Equipment:(NSString *)Equipment Dvicescode:(NSString *)dvicescode{
+-(void)RegequipAccount:(NSString *)account Equipment:(NSString *)Equipment Dvicescode:(NSString *)dvicescode {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:RegequipAPI parameters:@{@"account":account,
+    [manager GET:RegequipAPI parameters:@{@"act":@"GET_UserRegisteredequipment",
+                                          @"account":account,
                                           @"Equipment":Equipment,
                                           @"Dvicescode":dvicescode} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        NSArray *array = (NSArray*)responseObject;
-        NSDictionary*dict = [array lastObject];
-        NEUABRegDeviceModel*regDevice=[NEUABRegDeviceModel regDeviceModelWithDict:dict];
-                                              NSLog(@"%@",regDevice);
+//        NSLog(@"JSON: %@", responseObject);
+//        NSArray *array = (NSArray*)responseObject;
+//        NSDictionary*dict = [array lastObject];
+//        NEUABRegDeviceModel*regDevice=[NEUABRegDeviceModel regDeviceModelWithDict:dict];
+//                                              NSLog(@"%@",regDevice);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -109,14 +117,15 @@ static NEUABNetworkMngTool* tool;
 -(void)LogoutequipmentAccount:(NSString *)account Equipment:(NSString *)Equipment{
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:LogoutequipAPI parameters:@{@"account":account,
+    [manager GET:LogoutequipAPI parameters:@{@"act":@"GET_UserDeleteequipment",
+                                             @"account":account,
                                              @"Equipment":Equipment} success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                                  NSLog(@"JSON: %@", responseObject);
-                                                 NSArray *array = (NSArray*)responseObject;
-                                                 NSDictionary*dict = [array lastObject];
-                                                 
-                                                 NEUABLogoutDeviceModel*logoutDevice = [NEUABLogoutDeviceModel logoutDeviceModelWithDict:dict];
-                                                 NSLog(@"%@", logoutDevice);
+//                                                 NSArray *array = (NSArray*)responseObject;
+//                                                 NSDictionary*dict = [array lastObject];
+//                                                 
+//                                                 NEUABLogoutDeviceModel*logoutDevice = [NEUABLogoutDeviceModel logoutDeviceModelWithDict:dict];
+//                                                 NSLog(@"%@", logoutDevice);
                                              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                                  NSLog(@"Error: %@", error);
                                              }];
@@ -125,10 +134,11 @@ static NEUABNetworkMngTool* tool;
 }
 
 //6.根据设备ID取得当前的环境数据(1 温度 2湿度 3红外 4烟雾) GET
--(void)GetinfoAccount:(NSString *)account Equipment:(NSString *)Equipment{
+-(void)GetinfoAccount:(NSString *)account Equipment:(NSString *)Equipment {
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:GetinfoAPI parameters:@{@"account":account,
+    [manager GET:GetinfoAPI parameters:@{@"act":@"GET_UserAcquisitionparameters",
+                                         @"account":account,
                                          @"Equipment":Equipment} success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                              NSLog(@"JSON: %@", responseObject);
                                              NSArray *array = (NSArray*)responseObject;
