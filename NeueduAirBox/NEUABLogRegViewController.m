@@ -127,62 +127,62 @@
            NSLog(@"登录成功");
             //测试登录已注册过的用户 Case1 正常逻辑 ---------------
            [[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text];
-           
-           //测试登录已注册过的用户Case2 异常逻辑------------------
-           //（不用自动记住密码功能，假设重新输入错误）
-           _accountTextField.text=@"13622223334";
-           _passwordTextField.text=@"123456";
-           
-           
-           
-           //正确账号为：13622223333  密码正确
-           
-           [[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text];
-           
-           //测试登录已注册过的用户Case3 异常逻辑------------------
-           //（不用自动记住密码功能，假设重新输入错误）
-           _accountTextField.text=@"13622";
-           _passwordTextField.text=@"123456";
-           
-           
-           
-           //正确账号为：13622223333  密码正确
-           
-           [[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text];
-
-           
-           //测试登录已注册过的用户Case4 异常逻辑------------------
-           //（不用自动记住密码功能，假设重新输入错误）
-           _accountTextField.text=@"23622223333";
-           _passwordTextField.text=@"123456";
-           
-           
-           
-           //正确账号为：13622223333  密码正确
-           
-           [[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text];
-           
-           //测试登录已注册过的用户Case5 异常逻辑-----------------
-           //（不用自动记住密码功能，假设重新输入错误）
-           _accountTextField.text=@"hahahahah";
-           _passwordTextField.text=@"123456";
-           
-           
-           
-           //正确账号为：13622223333  密码正确
-           
-           [[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text];
-           
-           //测试登录已注册过的用户Case6 异常逻辑----------------
-           //（不用自动记住密码功能，假设重新输入错误）
-           _accountTextField.text=@"13622223333";
-           _passwordTextField.text=@"hah";
-           
-           
-           
-           //正确账号为：13622223333  密码错误
-           
-           [[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text];
+//
+//           //测试登录已注册过的用户Case2 异常逻辑------------------
+//           //（不用自动记住密码功能，假设重新输入错误）
+//           _accountTextField.text=@"13622223334";
+//           _passwordTextField.text=@"123456";
+//           
+//           
+//           
+//           //正确账号为：13622223333  密码正确
+//           
+//           [[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text];
+//           
+//           //测试登录已注册过的用户Case3 异常逻辑------------------
+//           //（不用自动记住密码功能，假设重新输入错误）
+//           _accountTextField.text=@"13622";
+//           _passwordTextField.text=@"123456";
+//           
+//           
+//           
+//           //正确账号为：13622223333  密码正确
+//           
+//           [[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text];
+//
+//           
+//           //测试登录已注册过的用户Case4 异常逻辑------------------
+//           //（不用自动记住密码功能，假设重新输入错误）
+//           _accountTextField.text=@"23622223333";
+//           _passwordTextField.text=@"123456";
+//           
+//           
+//           
+//           //正确账号为：13622223333  密码正确
+//           
+//           [[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text];
+//           
+//           //测试登录已注册过的用户Case5 异常逻辑-----------------
+//           //（不用自动记住密码功能，假设重新输入错误）
+//           _accountTextField.text=@"hahahahah";
+//           _passwordTextField.text=@"123456";
+//           
+//           
+//           
+//           //正确账号为：13622223333  密码正确
+//           
+//           [[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text];
+//           
+//           //测试登录已注册过的用户Case6 异常逻辑----------------
+//           //（不用自动记住密码功能，假设重新输入错误）
+//           _accountTextField.text=@"13622223333";
+//           _passwordTextField.text=@"hah";
+//           
+//           
+//           
+//           //正确账号为：13622223333  密码错误
+//           
+//           [[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text];
 
         }
 
@@ -193,23 +193,24 @@
 -(void)resignButton:(UIButton*)sender{
     
     //测试注册网络接口 Case1 正常逻辑-----------------
-    [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"haha" Account:@"13622223333" Password:@"123456"];
+    [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"test" Account:@"13578671492" Password:@"31121376"];
     
-    //测试注册网络接口 Case2 异常逻辑-------------------
-    [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"haha" Account:@"13622223333" Password:@"123456"];
-    
-    //测试注册网络接口 Case3 异常逻辑--------------------
-    [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"haha" Account:@"63622223334" Password:@"123456"];
-    //测试注册网络接口 Case4 异常逻辑---------------------
-   [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"haha" Account:@"223334" Password:@"123456"];
-    
-//    
+//    //测试注册网络接口 Case2 异常逻辑-------------------
+//    [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"haha" Account:@"13622223333" Password:@"123456"];
+//
+//    //测试注册网络接口 Case3 异常逻辑--------------------
+//    [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"haha" Account:@"63622223334" Password:@"123456"];
+//    //测试注册网络接口 Case4 异常逻辑---------------------
+//   [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"haha" Account:@"223334" Password:@"123456"];
+//     //测试注册网络接口 Case5 异常逻辑---------------------
+//     [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"" Account:@"13622223333" Password:@"123456"];
+//
 //    RegViewController* reg = [[RegViewController alloc] init];
 //    [self presentViewController:reg animated:YES completion:^{
 //        
 //    }];
 
-    [self performSegueWithIdentifier:@"toResign" sender:self];
+  //  [self performSegueWithIdentifier:@"toResign" sender:self];
 
     
 }

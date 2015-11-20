@@ -58,20 +58,20 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
 //测试取得具体设备参数   test1 正常状态
-[[NEUABNetworkMngTool sharedNetworkMngTool]GetinfoAccount:@"13622223333" Equipment:@"KQHZ0000001"];
+[[NEUABNetworkMngTool sharedNetworkMngTool]GetinfoAccount:@"13381109915" Equipment:@"KQHZ00000001"];
     //测试取得具体设备参数   test2 异常状态
-    [[NEUABNetworkMngTool sharedNetworkMngTool]GetinfoAccount:@"23622223333" Equipment:@"KQHZ0000001"];
-    //测试取得具体设备参数   test3 异常状态
-    [[NEUABNetworkMngTool sharedNetworkMngTool]GetinfoAccount:@"1362222223333" Equipment:@"KQHZ0000001"];
-    //测试取得具体设备参数   test4 异常状态
-    [[NEUABNetworkMngTool sharedNetworkMngTool]GetinfoAccount:@"136223333" Equipment:@"KQHZ0000001"];
-    //测试取得具体设备参数   test5 异常状态
-    [[NEUABNetworkMngTool sharedNetworkMngTool]GetinfoAccount:@"13622223333" Equipment:@"KQHZ0000000001"];
-    //测试取得具体设备参数   test6 异常状态
-    [[NEUABNetworkMngTool sharedNetworkMngTool]GetinfoAccount:@"13622223333" Equipment:@"KQHZ001"];
-    //测试取得具体设备参数   test7 异常状态
-    [[NEUABNetworkMngTool sharedNetworkMngTool]GetinfoAccount:@"13622223333" Equipment:@"HQHZ0000001"];
-    //若测试设备异常  询问服务器人员异常的仪器
+//    [[NEUABNetworkMngTool sharedNetworkMngTool]GetinfoAccount:@"23622223333" Equipment:@"KQHZ0000001"];
+//    //测试取得具体设备参数   test3 异常状态
+//    [[NEUABNetworkMngTool sharedNetworkMngTool]GetinfoAccount:@"1362222223333" Equipment:@"KQHZ0000001"];
+//    //测试取得具体设备参数   test4 异常状态
+//    [[NEUABNetworkMngTool sharedNetworkMngTool]GetinfoAccount:@"136223333" Equipment:@"KQHZ0000001"];
+//    //测试取得具体设备参数   test5 异常状态
+//    [[NEUABNetworkMngTool sharedNetworkMngTool]GetinfoAccount:@"13622223333" Equipment:@"KQHZ0000000001"];
+//    //测试取得具体设备参数   test6 异常状态
+//    [[NEUABNetworkMngTool sharedNetworkMngTool]GetinfoAccount:@"13622223333" Equipment:@"KQHZ001"];
+//    //测试取得具体设备参数   test7 异常状态
+//    [[NEUABNetworkMngTool sharedNetworkMngTool]GetinfoAccount:@"13622223333" Equipment:@"HQHZ0000001"];
+//    //若测试设备异常  询问服务器人员异常的仪器
     
 
 
