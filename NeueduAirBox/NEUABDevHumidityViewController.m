@@ -94,6 +94,7 @@
     _percentage =randomData;
     if( _percentage > 100.0 )
         _percentage -= 101.0;
+    
     }
 
 @end
