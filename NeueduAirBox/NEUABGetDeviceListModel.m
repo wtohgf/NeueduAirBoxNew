@@ -12,20 +12,21 @@
 
 
 
-+(instancetype)getDeviceListModelWithDict:(NSDictionary *)dict{
++(instancetype)getDeviceListModelWithDictionary:(NSDictionary *)dict{
 
     NEUABGetDeviceListModel* model=[[NEUABGetDeviceListModel alloc]init];
     if (model) {
-        model.msg=[dict objectForKey:@"msg"];
         
-        model.equipment=[NSMutableArray array];
-        //  通过key 拿到需要转换成模型的那个数组
-        NSArray *Equipment=[dict objectForKey:@"Equipment"];
+        
+    model.msg=[dict objectForKey:@"msg"];
+    model.equipment=[NSMutableArray array];
+//          通过key 拿到需要转换成模型的那个数组
+        NSArray *Equipment=[NSArray arrayWithArray:[dict objectForKey:@"Equipment"]];
         for (int i=0; i<Equipment.count; i++) {
-            NSDictionary* dict1=Equipment[i];
-            NEUABEquipments *Equipments=[NEUABEquipments equipmentsWithDict:dict1];
+           // NSDictionary* dict1=Equipment[i];
+            NEUABEquipments *Equipments=[NEUABEquipments equipmentsWithDict:Equipment[i]];
             [model.equipment addObject:Equipments];
-            
+        
         }
     }
     return model;

@@ -14,6 +14,7 @@
 #import "NEUABLogoutDeviceModel.h"
 #import "NEUABGetEnvironmentalDataModel.h"
 #import "NEUABGetDeviceListModel.h"
+#import "NEUABEquipments.h"
 
 static NEUABNetworkMngTool* tool;
 
@@ -75,9 +76,11 @@ static NEUABNetworkMngTool* tool;
         NSLog(@"JSON: %@", responseObject);
         NSArray *array = (NSArray*)responseObject;
         NSDictionary*dict = [array lastObject];
-        
-        NEUABRegDeviceModel*regDevice = [NEUABRegDeviceModel regDeviceModelWithDict:dict];
-             NSLog(@"%@", regDevice);
+//       NEUABGetDeviceListModel*model
+        NEUABGetDeviceListModel*model=[NEUABGetDeviceListModel getDeviceListModelWithDictionary:dict];
+            NSLog(@"%@",model);
+                                            
+       
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -94,9 +97,8 @@ static NEUABNetworkMngTool* tool;
         NSLog(@"JSON: %@", responseObject);
         NSArray *array = (NSArray*)responseObject;
         NSDictionary*dict = [array lastObject];
-        
-        NEUABLogoutDeviceModel*logoutDevice = [NEUABLogoutDeviceModel logoutDeviceModelWithDict:dict];
-                        NSLog(@"%@", logoutDevice);
+        NEUABRegDeviceModel*regDevice=[NEUABRegDeviceModel regDeviceModelWithDict:dict];
+                                              NSLog(@"%@",regDevice);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -105,40 +107,41 @@ static NEUABNetworkMngTool* tool;
 
 //5.注销设备 GET
 -(void)LogoutequipmentAccount:(NSString *)account Equipment:(NSString *)Equipment{
-
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:LogoutequipAPI parameters:@{@"account":account,
                                              @"Equipment":Equipment} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        NSArray *array = (NSArray*)responseObject;
-        NSDictionary*dict = [array lastObject];
-        
-        NEUABGetEnvironmentalDataModel*getEnvironmentalData = [NEUABGetEnvironmentalDataModel getEnvironmentalDataModelWithDict:dict];
-                       NSLog(@"%@", getEnvironmentalData);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
+                                                 NSLog(@"JSON: %@", responseObject);
+                                                 NSArray *array = (NSArray*)responseObject;
+                                                 NSDictionary*dict = [array lastObject];
+                                                 
+                                                 NEUABLogoutDeviceModel*logoutDevice = [NEUABLogoutDeviceModel logoutDeviceModelWithDict:dict];
+                                                 NSLog(@"%@", logoutDevice);
+                                             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                 NSLog(@"Error: %@", error);
+                                             }];
     
-
+    
 }
 
 //6.根据设备ID取得当前的环境数据(1 温度 2湿度 3红外 4烟雾) GET
 -(void)GetinfoAccount:(NSString *)account Equipment:(NSString *)Equipment{
-
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:GetinfoAPI parameters:@{@"account":account,
                                          @"Equipment":Equipment} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        NSArray *array = (NSArray*)responseObject;
-        NSDictionary*dict = [array lastObject];
-         
-        NEUABGetDeviceListModel*getDeviceList = [NEUABGetDeviceListModel getDeviceListModelWithDict:dict];
-                                             NSLog(@"%@", getDeviceList);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
+                                             NSLog(@"JSON: %@", responseObject);
+                                             NSArray *array = (NSArray*)responseObject;
+                                             NSDictionary*dict = [array lastObject];
+                                             NEUABGetEnvironmentalDataModel*getEnvironmentalData = [NEUABGetEnvironmentalDataModel getEnvironmentalDataModelWithDict:dict];
+                                             NSLog(@"%@", getEnvironmentalData);
+                                             
+                                             
+                                         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                             NSLog(@"Error: %@", error);
+                                         }];
     
-
-
+    
+    
 }
 @end
