@@ -12,7 +12,7 @@
 #import "MBProgressHUD+MoreExtentions.h"
 #import <SMS_SDK/SMSSDK.h>
 #import "NEUABNetworkMngTool.h"
-#import "NEUABLogoutDeviceModel.h"
+
 #import "NEUABNetworkMngTool.h"
 @interface NEUABLogRegViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *SMSCode;

@@ -14,6 +14,7 @@
 #import "NEUABLogoutDeviceModel.h"
 #import "NEUABGetEnvironmentalDataModel.h"
 #import "NEUABGetDeviceListModel.h"
+#import "NEUABEquipments.h"
 
 static NEUABNetworkMngTool* tool;
 
@@ -76,7 +77,9 @@ static NEUABNetworkMngTool* tool;
         NSArray *array = (NSArray*)responseObject;
         NSDictionary*dict = [array lastObject];
 //       NEUABGetDeviceListModel*model
-        
+        NEUABGetDeviceListModel*model=[NEUABGetDeviceListModel getDeviceListModelWithDictionary:dict];
+            NSLog(@"%@",model);
+                                            
        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
