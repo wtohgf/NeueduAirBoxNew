@@ -57,8 +57,8 @@
     
 }
 -(void)viewWillAppear:(BOOL)animated{
-//测试取得具体设备参数   test1 正常状态
-[[NEUABNetworkMngTool sharedNetworkMngTool]GetinfoAccount:@"13381109915" Equipment:@"KQHZ00000001"];
+//测试取得具体设备参数   test1 正常状态13381109915
+[[NEUABNetworkMngTool sharedNetworkMngTool]GetinfoAccount:@"13622223333" Equipment:@"KQHZ00000001"];
     //测试取得具体设备参数   test2 异常状态
 //    [[NEUABNetworkMngTool sharedNetworkMngTool]GetinfoAccount:@"23622223333" Equipment:@"KQHZ0000001"];
 //    //测试取得具体设备参数   test3 异常状态

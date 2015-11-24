@@ -38,13 +38,13 @@
     
     
     //测试根据每个用户取的设备列表  test1 （正常状态）----------------------------
-    [[NEUABNetworkMngTool sharedNetworkMngTool]GetequipNoAccount:@"13578671492"];
+    [[NEUABNetworkMngTool sharedNetworkMngTool]GetequipNoAccount:@"13622223333"];
 //    //测试如若用户没有天加任何数据 请回到注册界面注册新的号码并进行测试----------------
-//    [[NEUABNetworkMngTool sharedNetworkMngTool]GetequipNoAccount:@"13622221111"];
+ //   [[NEUABNetworkMngTool sharedNetworkMngTool]GetequipNoAccount:@"13381109915"];
 //    //13622221111为申请但并未进行添加任何设备
 //    //测试根据每个用户取的设备列表  test1 （正常状态）----------------------------
 //        //假若用户没有进行登录 则以上函数走不到
-//    [[NEUABNetworkMngTool sharedNetworkMngTool]GetequipNoAccount:@"1362222"];
+ //   [[NEUABNetworkMngTool sharedNetworkMngTool]GetequipNoAccount:@"1362222"];
 //    [[NEUABNetworkMngTool sharedNetworkMngTool]GetequipNoAccount:@"23622223333"];
 //    
 //    [[NEUABNetworkMngTool sharedNetworkMngTool]GetequipNoAccount:@"1362222222223333"];
@@ -112,10 +112,10 @@
 //    _DevMnglist=nil;
 //    
     
-    //测试删除已添加的设备   test1  正常状态
-    [[NEUABNetworkMngTool sharedNetworkMngTool]LogoutequipmentAccount:@"13381109915" Equipment:@"KQHZ00000001"];
+    //测试删除已添加的设备   test1  正常状态13381109915
+     [[NEUABNetworkMngTool sharedNetworkMngTool]LogoutequipmentAccount:@"13622223333" Equipment:@"KQHZ00000001"];
     
-//    //测试删除已添加的设备   test2  异常状态
+    //测试删除已添加的设备   test2  异常状态
 //    [[NEUABNetworkMngTool sharedNetworkMngTool]LogoutequipmentAccount:@"33622223333" Equipment:@"KQHZ000001"];
 //
 //    //测试删除已添加的设备   test3  异常状态

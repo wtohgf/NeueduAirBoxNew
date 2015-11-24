@@ -34,21 +34,21 @@ static NEUABNetworkMngTool* tool;
     NSDictionary *parameters = @{@"clevername":cleverName,
                                  @"account":account,
                                  @"password":password};
-    NSLog(@"clename%@",cleverName)
+    NSLog(@"clename %@",cleverName)
     ;
     // 设置返回格式
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/json", nil];
+//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/json", nil];
     
     [manager POST:REGAPI parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
-        NSArray* array = (NSArray*)responseObject;
-        NSDictionary* dict = [array lastObject];
-        
-        //字典转模型
-        NEUABRegResultModel* regResult = [NEUABRegResultModel regResultModelWithDict:dict];
-        NSLog(@"%@", regResult);
-        
+//        NSArray* array = (NSArray*)responseObject;
+//        NSDictionary* dict = [array lastObject];
+//        
+//        //字典转模型
+//        NEUABRegResultModel* regResult = [NEUABRegResultModel regResultModelWithDict:dict];
+//        NSLog(@"%@", regResult);
+//
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -61,6 +61,7 @@ static NEUABNetworkMngTool* tool;
     [manager GET:LOGAPI parameters:@{@"act":@"GET_UserLogon",
                                      @"account":account,
                                      @"password":password} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                        
         NSLog(@"JSON: %@", responseObject);
         NSArray *array = (NSArray*)responseObject;
         NSDictionary*dict = [array lastObject];
@@ -101,8 +102,8 @@ static NEUABNetworkMngTool* tool;
     [manager GET:RegequipAPI parameters:@{@"act":@"GET_UserRegisteredequipment",
                                           @"account":account,
                                           @"Equipment":Equipment,
-                                          @"Dvicescode":dvicescode} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"JSON: %@", responseObject);
+                                          @"dvicescode":dvicescode} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
 //        NSArray *array = (NSArray*)responseObject;
 //        NSDictionary*dict = [array lastObject];
 //        NEUABRegDeviceModel*regDevice=[NEUABRegDeviceModel regDeviceModelWithDict:dict];

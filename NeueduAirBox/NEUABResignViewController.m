@@ -10,6 +10,7 @@
 #import "NEUABLogRegViewController.h"
 #import <MBProgressHUD.h>
 #import "MBProgressHUD+MoreExtentions.h"
+#import "NEUABNetworkMngTool.h"
 @interface NEUABResignViewController ()
 @property(weak,nonatomic)UIAlertView*alertView;
 @end
@@ -43,6 +44,7 @@ static int count = 0;
     (buttonIndex==1){
         if (timeindex==1) {
             NSLog(@"获取验证码成功");
+          
             count = 0;
             
             NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:5
@@ -140,10 +142,13 @@ static int count = 0;
     
     //获取验证码
     UIButton * getver = [[UIButton alloc]init];
+    _getver=getver;
     getver.frame = CGRectMake(leftMargin+2*labelWidth+kMargin+80.f, upMargin+3*labelHeight+100.f+kMargin, labelWidth+50.f, labelHeight);
     [getver setTitle:@"获取验证码" forState:UIControlStateNormal];
+    
     //getver.font = [UIFont fontWithName:@"Helvetica" size:15];
     [getver setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [getver setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     [getver addTarget:self action:@selector(getvercode:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:getver];
     
@@ -157,10 +162,12 @@ static int count = 0;
     _time.hidden=YES;
     [self.view addSubview:time];
     
-    //收不到短信验证码
+    //收不到短信验证码重新输入
     UIButton*repeatSMSBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    repeatSMSBtn.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-labelWidth-100.f)*0.5, upMargin+4*labelHeight+100.f+2*kMargin, labelWidth+100.f, labelHeight-10.f);
-    [repeatSMSBtn setTitle:@"收不到短信验证码？" forState:UIControlStateNormal];
+    repeatSMSBtn.frame = CGRectMake(leftMargin+2*labelWidth+kMargin+80.f, upMargin+3*labelHeight+100.f+kMargin, labelWidth+50.f, labelHeight);
+    [repeatSMSBtn setTitle:@"重新发送" forState:UIControlStateNormal];
+    [repeatSMSBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [repeatSMSBtn setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     [repeatSMSBtn addTarget:self action:@selector(CannotGetSMS:) forControlEvents:UIControlEventTouchUpInside];
     _repeatSMSBtn=repeatSMSBtn;
     repeatSMSBtn.hidden=YES;
@@ -210,11 +217,14 @@ static int count = 0;
     if (count >= 5)
     {
         [_timer2 invalidate];
+        _timer2 = nil;
         return;
     }
     //NSLog(@"更新时间");
+
+    _getver.enabled=NO;
     _time.hidden=NO;
-    _repeatSMSBtn.hidden = YES;
+    _repeatSMSBtn.enabled =NO;
     self.time.text = [NSString stringWithFormat:@"%@%i%@",@"接收验证码中...",5-count,@"秒"];
     
 }
@@ -222,14 +232,18 @@ static int count = 0;
 //验证码发送成功
 #pragma mark显示收不到验证码按钮
 -(void)showRepeatButton{
+    _getver.hidden=YES;
+    _getver.enabled=YES;
     _time.hidden = YES;
-    _repeatSMSBtn.hidden = NO;
+    _repeatSMSBtn.hidden=NO;
+    _repeatSMSBtn.enabled =YES;
     [_timer1 invalidate];
     return;
 }
 
 #pragma mark 注册
 - (void)resign:(UIButton *)sender {
+    
     if (_phone.text.length==0||_passwords.text.length==0||_name.text.length == 0) {
         UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入昵称，手机号或密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertView show];
@@ -240,9 +254,10 @@ static int count = 0;
          UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"验证码输入错误，请重新输入" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
          [alertView show];
      }else{[SMSSDK commitVerificationCode:_SMSCode.text phoneNumber:_phone.text zone:@"86" result:^(NSError *error) {
+         
             if([self checkTel:_phone.text]&&_passwords.text.length!=0){
-                //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                
+                [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:_name.text Account:_phone.text Password:_passwords.text];
                 if (!error) {
                     NSLog(@"验证成功");
                     [MBProgressHUD showTipToWindow:@"注册成功"];
@@ -292,6 +307,7 @@ static int count = 0;
 #pragma mark获取验证码
 -(void)getvercode:(UIButton*)sender{
 
+    
     //NSLog(@"vercode");
     //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
     if (_name.text.length==0||_phone.text.length==0||_passwords.text.length==0) {
@@ -304,9 +320,7 @@ static int count = 0;
         [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:_phone.text zone:@"86" customIdentifier:nil result:^(NSError *error) {
             if (!error) {
                 NSLog(@"获取验证码成功");
-                [_timer2 invalidate];
-                [_timer1 invalidate];
-                count = 0;
+                                count = 0;
                 
                 NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:5
                                                                   target:self

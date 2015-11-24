@@ -36,12 +36,12 @@
 
 - (IBAction)yousureAdd:(UIButton *)sender {
   //测试添加设备  test1  正常状态－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
-   [ [NEUABNetworkMngTool sharedNetworkMngTool]RegequipAccount:@"13578671492" Equipment:_Equipment.text Dvicescode:_Dviceaddress.text];
+//   [ [NEUABNetworkMngTool sharedNetworkMngTool]RegequipAccount:@"13578671492" Equipment:_Equipment.text Dvicescode:_Dviceaddress.text];
     
 //   //测试添加设备 text2 异常状态－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
 //    //序列号格式不对
-//    [ [NEUABNetworkMngTool sharedNetworkMngTool]RegequipAccount:@"13622223333" Equipment:@"nQHZ0000001" Dvicescode:_Dviceaddress.text];
-//        //若正确格式为KQHZ0000001
+    [ [NEUABNetworkMngTool sharedNetworkMngTool]RegequipAccount:@"13622223333" Equipment:_Equipment.text Dvicescode:_Dviceaddress.text];
+//        //若正确格式为KQHZ0000001@"NQHZ0000001"
 //    //测试添加设备 text3 异常状态－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
 //    
 //    [ [NEUABNetworkMngTool sharedNetworkMngTool]RegequipAccount:@"13622223333" Equipment:@"KQHZ000000000000000000001" Dvicescode:_Dviceaddress.text];
