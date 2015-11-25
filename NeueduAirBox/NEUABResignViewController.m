@@ -89,6 +89,7 @@ static int count = 0;
     _name = name;
     name.frame = CGRectMake(leftMargin+labelWidth+kMargin, upMargin+100.f-2*kMargin, [UIScreen mainScreen].bounds.size.width-leftMargin-rightMargin-labelWidth-kMargin, labelHeight);
     [self.view addSubview:name];
+    [name setFont:[UIFont systemFontOfSize:14.f]];
      name.placeholder=@"请输入昵称";
     name.borderStyle=UITextBorderStyleRoundedRect;
     
@@ -108,7 +109,7 @@ static int count = 0;
     
     //输入字符为数字
     phoneTextFiled.keyboardType=UIKeyboardTypeNumberPad;
-    
+    [phoneTextFiled setFont:[UIFont systemFontOfSize:14.f]];
     phoneTextFiled.placeholder=@"请输入手机号";
     phoneTextFiled.borderStyle=UITextBorderStyleRoundedRect;
     
@@ -121,7 +122,8 @@ static int count = 0;
     UITextField * passwordTextfiled  =[[UITextField alloc]init];
     _passwords = passwordTextfiled;
     passwordTextfiled.frame = CGRectMake(leftMargin+labelWidth+kMargin, 2*labelHeight+upMargin+100.f,[UIScreen mainScreen].bounds.size.width-leftMargin-rightMargin-labelWidth-kMargin, labelHeight);
-    passwordTextfiled.placeholder = @"请输入密码";
+    [passwordTextfiled setFont:[UIFont systemFontOfSize:14.f]];
+    passwordTextfiled.placeholder = @"请输入不小于6位的密码";
     passwordTextfiled.borderStyle = UITextBorderStyleRoundedRect;
     passwordTextfiled.secureTextEntry = YES;
     [self.view addSubview:passwordTextfiled];
@@ -141,10 +143,11 @@ static int count = 0;
     [self.view addSubview:SMSCodeTextfiled];
     
     //获取验证码
-    UIButton * getver = [[UIButton alloc]init];
+    UIButton * getver = [UIButton buttonWithType:UIButtonTypeSystem];
     _getver=getver;
     getver.frame = CGRectMake(leftMargin+2*labelWidth+kMargin+80.f, upMargin+3*labelHeight+100.f+kMargin, labelWidth+50.f, labelHeight);
     [getver setTitle:@"获取验证码" forState:UIControlStateNormal];
+    
     
     //getver.font = [UIFont fontWithName:@"Helvetica" size:15];
     [getver setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
@@ -153,7 +156,7 @@ static int count = 0;
     [self.view addSubview:getver];
     
     UILabel* time = [[UILabel alloc]init];
-    time.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-labelWidth-100.f)*0.5, upMargin+4*labelHeight+100.f+2*kMargin, labelWidth+100.f, labelHeight);
+    time.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-labelWidth-100.f)*0.5, upMargin+4*labelHeight+130.f+2*kMargin, labelWidth+100.f, labelHeight);
     time.numberOfLines = 0;
     time.textAlignment = NSTextAlignmentCenter;
     time.font = [UIFont fontWithName:@"Helvetica" size:15];
@@ -164,13 +167,15 @@ static int count = 0;
     
     //收不到短信验证码重新输入
     UIButton*repeatSMSBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    //UIButton*repeatSMSBtn = [[UIButton alloc]init];
     repeatSMSBtn.frame = CGRectMake(leftMargin+2*labelWidth+kMargin+80.f, upMargin+3*labelHeight+100.f+kMargin, labelWidth+50.f, labelHeight);
     [repeatSMSBtn setTitle:@"重新发送" forState:UIControlStateNormal];
     [repeatSMSBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [repeatSMSBtn setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+
     [repeatSMSBtn addTarget:self action:@selector(CannotGetSMS:) forControlEvents:UIControlEventTouchUpInside];
     _repeatSMSBtn=repeatSMSBtn;
-    repeatSMSBtn.hidden=YES;
+     repeatSMSBtn.hidden=YES;
     [self.view addSubview:repeatSMSBtn];
     
     // 注册按钮
@@ -181,6 +186,17 @@ static int count = 0;
     resign.backgroundColor=[UIColor yellowColor];
     [resign addTarget:self action:@selector(resign:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:resign];
+    
+    
+    // 收不到短信时提示的信息
+    UILabel* hintLabel=[[UILabel alloc]init];
+    hintLabel.frame=CGRectMake(([UIScreen mainScreen].bounds.size.width-labelWidth-200.f)*0.5, upMargin+4*labelHeight+135.f+2*kMargin, labelWidth+220.f, labelHeight-10.f);
+    [hintLabel setText:@" 提示：收不到短信验证码？请点击重新发送按钮"];
+    hintLabel.font=[UIFont systemFontOfSize:13.f];
+    hintLabel.hidden=YES;
+    hintLabel.textColor=[UIColor redColor];
+    _hintLable=hintLabel;
+    [self.view addSubview:hintLabel];
 
 }
 
@@ -225,6 +241,7 @@ static int count = 0;
     _getver.enabled=NO;
     _time.hidden=NO;
     _repeatSMSBtn.enabled =NO;
+    _hintLable.hidden=YES;
     self.time.text = [NSString stringWithFormat:@"%@%i%@",@"接收验证码中...",5-count,@"秒"];
     
 }
@@ -237,6 +254,7 @@ static int count = 0;
     _time.hidden = YES;
     _repeatSMSBtn.hidden=NO;
     _repeatSMSBtn.enabled =YES;
+    _hintLable.hidden=NO;
     [_timer1 invalidate];
     return;
 }
@@ -247,6 +265,10 @@ static int count = 0;
     if (_phone.text.length==0||_passwords.text.length==0||_name.text.length == 0) {
         UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入昵称，手机号或密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertView show];
+    }else if(_passwords.text.length<=6){
+        UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入不小🐟6位的密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alertView show];
+        
     }else if(_SMSCode.text.length == 0){
         UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入验证码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertView show];

@@ -22,6 +22,7 @@
 @property(weak,nonatomic)UITextField* SMSCode;
 @property(weak,nonatomic)UITextField* name;
 @property(weak,nonatomic)UIButton* getver;
+@property(weak,nonatomic)UILabel* hintLable;
 
 @property(assign,nonatomic)NSTimer* timer1;
 @property(assign,nonatomic)NSTimer* timer2;
