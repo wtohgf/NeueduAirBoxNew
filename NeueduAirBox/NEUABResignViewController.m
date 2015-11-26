@@ -273,7 +273,7 @@ static int count = 0;
         UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"验证码输入错误，请重新输入" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertView show];
     }else{[SMSSDK commitVerificationCode:_SMSCode.text phoneNumber:_phone.text zone:@"86" result:^(NSError *error) {
-        
+        if(!error){
         if([self checkTel:_phone.text]&&_passwords.text.length!=0){
             
             [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:_name.text Account:_phone.text Password:_passwords.text Result:^(NSString *flag) {
@@ -285,9 +285,13 @@ static int count = 0;
                     [self performSegueWithIdentifier:@"tologon" sender:_phone.text];
                 }
             }];
+        }}else{
+            
+            UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"验证码输入错误，请重新输入" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alertView show];
         }
-    }];}
-    
+
+        }];}
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.destinationViewController isKindOfClass:[NEUABLogRegViewController class]]) {
