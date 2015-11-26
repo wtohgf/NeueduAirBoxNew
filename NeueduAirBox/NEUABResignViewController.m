@@ -265,8 +265,8 @@ static int count = 0;
     if (_phone.text.length==0||_passwords.text.length==0||_name.text.length == 0) {
         UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入昵称，手机号或密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertView show];
-    }else if(_passwords.text.length<=6){
-        UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入不小🐟6位的密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    }else if(_passwords.text.length<=5||_passwords.text.length>16){
+        UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入长度不小🐟6位或长度不超过16位的密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertView show];
         
     }else if(_SMSCode.text.length == 0){
