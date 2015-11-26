@@ -12,10 +12,10 @@
 #import "MBProgressHUD+MoreExtentions.h"
 #import <SMS_SDK/SMSSDK.h>
 #import "NEUABNetworkMngTool.h"
+#import "NEUABHomeViewController.h"
 
 #import "NEUABNetworkMngTool.h"
 @interface NEUABLogRegViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *SMSCode;
 @property (weak, nonatomic)UIButton *storepwd;
 @end
 
@@ -24,7 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backPage:)];
-     [self setSubViews];
+    [self setSubViews];
+    [self featchUserNamePwd];
 }
 #pragma mark 登录注册
 -(void)setSubViews{
@@ -78,7 +79,7 @@
     [self.view addSubview:storepassword];
     
     [storepassword addTarget:self action:@selector(storepasswordButton:) forControlEvents:UIControlEventTouchUpInside];
-
+    
     
     UIButton *resign = [[UIButton alloc]init];
     resign.frame = CGRectMake([UIScreen mainScreen].bounds.size.width-labelWidth-40.f, [UIScreen mainScreen].bounds.size.height-labelHeight-kMargin, labelWidth+40.f, labelHeight);
@@ -100,11 +101,6 @@
         _accountTextField.text = [userPwdDict valueForKey:ACKeychainUsername];
         _passwordTextField.text = [userPwdDict valueForKey:ACKeychainPassword];
     }
-    if (_phoneNumber.length == 11) {
-        _storepwd.selected = NO;
-        _accountTextField.text = _phoneNumber;
-        _passwordTextField.text = @"";
-    }
     
 }
 
@@ -121,119 +117,34 @@
     {
         if (_passwordTextField.text.length == 0) {
             [MBProgressHUD showTipToWindow:@"密码不能为空"];
-    }else
-       {
-           [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-           NSLog(@"登录成功");
-            //测试登录已注册过的用户 Case1 正常逻辑 ---------------
-          [[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text];
-//
-//           //测试登录已注册过的用户Case2 异常逻辑------------------
-//           //（不用自动记住密码功能，假设重新输入错误）
-//
-//           
-//           
-//           //正确账号为：13622223333  密码正确
-//           
-//           [[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text];
-//           
-//           //测试登录已注册过的用户Case3 异常逻辑------------------
-           //（不用自动记住密码功能，假设重新输入错误）
-//           _accountTextField.text=@"13622";
-//           _passwordTextField.text=@"123456";
-           
-           
-           
-           //正确账号为：13622223333  密码正确
-           
-//           [[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text];
-//
-//           
-//           //测试登录已注册过的用户Case4 异常逻辑------------------
-//           //（不用自动记住密码功能，假设重新输入错误）
-//           _accountTextField.text=@"23622223333";
-//           _passwordTextField.text=@"123456";
-//           
-//           
-//           
-//           //正确账号为：13622223333  密码正确
-//           
-//           [[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text];
-//           
-//           //测试登录已注册过的用户Case5 异常逻辑-----------------
-//           //（不用自动记住密码功能，假设重新输入错误）
-//           _accountTextField.text=@"hahahahah";
-//           _passwordTextField.text=@"123456";
-//           
-//           
-//           
-//           //正确账号为：13622223333  密码正确
-//           
-           //[[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text];
-//           
-//           //测试登录已注册过的用户Case6 异常逻辑----------------
-//           //（不用自动记住密码功能，假设重新输入错误）
-//           _accountTextField.text=@"13622223333";
-//           _passwordTextField.text=@"hah";
-//           
-//           
-//           
-//           //正确账号为：13622223333  密码错误
-//           
-//           [[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text];
-
+        }else
+        {
+            [[NEUABNetworkMngTool sharedNetworkMngTool]userLogAccount:_accountTextField.text Password:_passwordTextField.text Result:^(NSString *flag) {
+                if ([flag isEqualToString:@"Post_UserLogon"]) {
+                    if (_storepwd.selected == YES) {
+                        [[ACSimpleKeychain defaultKeychain] storeUsername:_accountTextField.text password:_passwordTextField.text identifier:@"user1" forService:@"userpassword"];
+                    }
+                    else
+                    {
+                        [[ACSimpleKeychain defaultKeychain] deleteAllCredentialsForService:@"userpassword"];
+                    }
+                    [MBProgressHUD showTipToWindow:@"登录成功"];
+                    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                    [UIApplication sharedApplication].keyWindow.rootViewController = [[NEUABHomeViewController alloc]init];
+                }
+            }];
+            
         }
-
     }
-}
+                   }
+
 
 #pragma mark  注册功能
 -(void)resignButton:(UIButton*)sender{
     
-    //测试注册网络接口 Case1 正常逻辑-----------------
- //   [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"郑幼稚" Account:@"13978671492" Password:@"123456"];
-    
-//    //测试注册网络接口 Case2 正常逻辑-------------------
-   // [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"haha" Account:@"22622223333" Password:@"123456"];
-//
-//    //测试注册网络接口 Case3 异常逻辑--------------------
-    //[[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"haha" Account:@"136222233" Password:@"123456"];
-//    //测试注册网络接口 Case4 异常逻辑---------------------
-   //[[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"haha" Account:@"223334" Password:@"123456"];
-//     //测试注册网络接口 Case5 异常逻辑---------------------
-     //[[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:@"" Account:@"13622223333" Password:@"123456"];
-//
-//    RegViewController* reg = [[RegViewController alloc] init];
-//    [self presentViewController:reg animated:YES completion:^{
-//        
-//    }];
-
-    
    [self performSegueWithIdentifier:@"toResign" sender:self];
-
     
 }
-//- (IBAction)sendSMS:(UIButton *)sender {
-//    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:@"13074856970" zone:@"86" customIdentifier:nil result:^(NSError *error) {
-//        if (!error) {
-//            NSLog(@"获取验证码成功");
-//        } else {
-//            NSLog(@"错误码：%@",error.debugDescription);
-//        }
-//    }];
-//}
-//- (IBAction)checkSMS:(UIButton *)sender {
-//        
-//    [SMSSDK commitVerificationCode:_SMSCode.text phoneNumber:@"13074856970" zone:@"86" result:^(NSError *error) {
-//        if (!error) {
-//            NSLog(@"验证成功");
-//        } else {
-//            NSLog(@"错误码：%@",error.debugDescription);
-//        }
-//    }];
-//    
-//}
-
 
 #pragma mark  记住密码功能
 -(void)storepasswordButton:(UIButton*)sender{

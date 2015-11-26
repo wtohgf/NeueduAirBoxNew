@@ -15,6 +15,10 @@
 #import "NEUABGetEnvironmentalDataModel.h"
 #import "NEUABGetDeviceListModel.h"
 #import "NEUABEquipments.h"
+#import <MBProgressHUD.h>
+#import "MBProgressHUD+MoreExtentions.h"
+#import "NEUABResignViewController.h"
+
 
 static NEUABNetworkMngTool* tool;
 
@@ -29,49 +33,84 @@ static NEUABNetworkMngTool* tool;
 }
 
 //1.用户注册 POST
--(void)userRegCleverName:(NSString*)cleverName Account:(NSString*)account Password:(NSString*)password{
+-(void)userRegCleverName:(NSString*)cleverName Account:(NSString*)account Password:(NSString*)password Result:(NetworkBlock) block{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *parameters = @{@"clevername":cleverName,
                                  @"account":account,
                                  @"password":password};
-    NSLog(@"clename %@",cleverName)
-    ;
-    // 设置返回格式
-//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/json", nil];
-    
     [manager POST:REGAPI parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
-//        NSArray* array = (NSArray*)responseObject;
-//        NSDictionary* dict = [array lastObject];
-//        
-//        //字典转模型
-//        NEUABRegResultModel* regResult = [NEUABRegResultModel regResultModelWithDict:dict];
-//        NSLog(@"%@", regResult);
-//
-        
+        if (block != nil){
+            NSArray* array = (NSArray*)responseObject;
+            NSDictionary* dict = [array lastObject];
+            
+            //字典转模型
+            NEUABRegResultModel* regResult = [NEUABRegResultModel regResultModelWithDict:dict];
+            NSLog(@"%@", regResult);
+            if (regResult !=nil) {
+                if ([regResult.msg isEqualToString:@"Post_UserReg"]) {
+                    block(@"Post_UserReg");
+                    
+                }else if([regResult.msg isEqualToString:@"Post_UserRegFail"]){
+                    NSString*C =[NSString stringWithFormat:@"%@",regResult.errorType];
+                    if([C isEqual:@"401"]){
+                        [MBProgressHUD showTipToWindow:@"用户已注册"];
+                    }
+                }else {
+                    [MBProgressHUD showTipToWindow:@"可能网络原因，注册失败"];
+                }
+            }
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        [MBProgressHUD showTipToWindow:@"可能网络原因，注册失败"];
+        
     }];
 }
 
 //2.用户登录  GET
--(void)userLogAccount:(NSString *)account Password:(NSString *)password {
+-(void)userLogAccount:(NSString *)account Password:(NSString *)password Result:(NetworkBlock) block{
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:LOGAPI parameters:@{@"act":@"GET_UserLogon",
-                                     @"account":account,
-                                     @"password":password} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                        
-        NSLog(@"JSON: %@", responseObject);
-        NSArray *array = (NSArray*)responseObject;
-        NSDictionary*dict = [array lastObject];
+    [manager GET:LOGAPI parameters:@{@"act":@"GET_UserLogon",@"account":account,@"password":password} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        NEUABLogResultModel*logResult = [NEUABLogResultModel logResultModelWithDict:dict];
-        NSLog(@"%@", logResult);
+        NSLog(@"JSON: %@", responseObject);
+        if (block != nil) {
+            NSArray *array = (NSArray*)responseObject;
+            NSDictionary*dict = [array lastObject];
+            
+            NEUABLogResultModel*logResult = [NEUABLogResultModel logResultModelWithDict:dict];
+            NSLog(@"%@", logResult);
+            if (logResult != nil) {
+                if ([logResult.msg isEqualToString:@"Post_UserLogon"]) {
+                    block(@"Post_UserLogon");
+                    
+                }else if([logResult.msg isEqualToString:@"Post_UserLogonFail"])
+                {
+                    // NSnumber转NSString
+                    NSString*C =[NSString stringWithFormat:@"%@",logResult.errorType];
+                    if([C isEqual:@"404"])
+                    {
+                        [MBProgressHUD showTipToWindow:@"账号不存在"];
+                        block(@"404");
+                        
+                    }else
+                    {
+                        [MBProgressHUD showTipToWindow:@"账号密码不匹配"];
+                        block(@"403");
+                    }
+                } else
+                {
+                    [MBProgressHUD showTipToWindow:@"可能网络原因，登录失败"];
+                }            }
+        }
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        [MBProgressHUD showTipToWindow:@"可能网络原因，登录失败"];
+        block(@"Post_UserLogonFail");
     }];
-
+    
 }
 
 //3.

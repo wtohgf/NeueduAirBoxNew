@@ -11,6 +11,10 @@
 #import <MBProgressHUD.h>
 #import "MBProgressHUD+MoreExtentions.h"
 #import "NEUABNetworkMngTool.h"
+#import "NEUABRegResultModel.h"
+
+
+
 @interface NEUABResignViewController ()
 @property(weak,nonatomic)UIAlertView*alertView;
 @end
@@ -38,36 +42,36 @@ static int count = 0;
     if (buttonIndex==0) {
         
         
-      
-       [[self navigationController] popViewControllerAnimated:YES];
+        
+        [[self navigationController] popViewControllerAnimated:YES];
     }else if
-    (buttonIndex==1){
-        if (timeindex==1) {
-            NSLog(@"获取验证码成功");
-          
-            count = 0;
+        (buttonIndex==1){
+            if (timeindex==1) {
+                NSLog(@"获取验证码成功");
+                
+                count = 0;
+                
+                NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:5
+                                                                  target:self
+                                                                selector:@selector(showRepeatButton)
+                                                                userInfo:nil
+                                                                 repeats:YES];
+                
+                NSTimer* timer2 = [NSTimer scheduledTimerWithTimeInterval:1
+                                                                   target:self
+                                                                 selector:@selector(updateTime)
+                                                                 userInfo:nil
+                                                                  repeats:YES];
+                _timer1 = timer;
+                _timer2 = timer2;
+                timeindex=0;
+                
+            }else{
+                NSLog(@"haha");
+            }
             
-            NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:5
-                                                              target:self
-                                                            selector:@selector(showRepeatButton)
-                                                            userInfo:nil
-                                                             repeats:YES];
             
-            NSTimer* timer2 = [NSTimer scheduledTimerWithTimeInterval:1
-                                                               target:self
-                                                             selector:@selector(updateTime)
-                                                             userInfo:nil
-                                                              repeats:YES];
-            _timer1 = timer;
-            _timer2 = timer2;
-            timeindex=0;
-            
-        }else{
-            NSLog(@"haha");
         }
-    
-    
-    }
 }
 //隐藏键盘
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -89,8 +93,7 @@ static int count = 0;
     _name = name;
     name.frame = CGRectMake(leftMargin+labelWidth+kMargin, upMargin+100.f-2*kMargin, [UIScreen mainScreen].bounds.size.width-leftMargin-rightMargin-labelWidth-kMargin, labelHeight);
     [self.view addSubview:name];
-    [name setFont:[UIFont systemFontOfSize:14.f]];
-     name.placeholder=@"请输入昵称";
+    name.placeholder=@"请输入昵称";
     name.borderStyle=UITextBorderStyleRoundedRect;
     
     UILabel * account = [[UILabel alloc]init];
@@ -98,7 +101,7 @@ static int count = 0;
     account.text = @"手机号";
     account.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:account];
-   
+    
     
     UITextField *phoneTextFiled = [[UITextField alloc]init];
     _phone = phoneTextFiled;
@@ -109,7 +112,7 @@ static int count = 0;
     
     //输入字符为数字
     phoneTextFiled.keyboardType=UIKeyboardTypeNumberPad;
-    [phoneTextFiled setFont:[UIFont systemFontOfSize:14.f]];
+    
     phoneTextFiled.placeholder=@"请输入手机号";
     phoneTextFiled.borderStyle=UITextBorderStyleRoundedRect;
     
@@ -122,8 +125,7 @@ static int count = 0;
     UITextField * passwordTextfiled  =[[UITextField alloc]init];
     _passwords = passwordTextfiled;
     passwordTextfiled.frame = CGRectMake(leftMargin+labelWidth+kMargin, 2*labelHeight+upMargin+100.f,[UIScreen mainScreen].bounds.size.width-leftMargin-rightMargin-labelWidth-kMargin, labelHeight);
-    [passwordTextfiled setFont:[UIFont systemFontOfSize:14.f]];
-    passwordTextfiled.placeholder = @"请输入不小于6位的密码";
+    passwordTextfiled.placeholder = @"请输入密码";
     passwordTextfiled.borderStyle = UITextBorderStyleRoundedRect;
     passwordTextfiled.secureTextEntry = YES;
     [self.view addSubview:passwordTextfiled];
@@ -143,11 +145,10 @@ static int count = 0;
     [self.view addSubview:SMSCodeTextfiled];
     
     //获取验证码
-    UIButton * getver = [UIButton buttonWithType:UIButtonTypeSystem];
+    UIButton * getver = [[UIButton alloc]init];
     _getver=getver;
     getver.frame = CGRectMake(leftMargin+2*labelWidth+kMargin+80.f, upMargin+3*labelHeight+100.f+kMargin, labelWidth+50.f, labelHeight);
     [getver setTitle:@"获取验证码" forState:UIControlStateNormal];
-    
     
     //getver.font = [UIFont fontWithName:@"Helvetica" size:15];
     [getver setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
@@ -156,7 +157,7 @@ static int count = 0;
     [self.view addSubview:getver];
     
     UILabel* time = [[UILabel alloc]init];
-    time.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-labelWidth-100.f)*0.5, upMargin+4*labelHeight+130.f+2*kMargin, labelWidth+100.f, labelHeight);
+    time.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-labelWidth-100.f)*0.5, upMargin+4*labelHeight+100.f+2*kMargin, labelWidth+100.f, labelHeight);
     time.numberOfLines = 0;
     time.textAlignment = NSTextAlignmentCenter;
     time.font = [UIFont fontWithName:@"Helvetica" size:15];
@@ -167,15 +168,13 @@ static int count = 0;
     
     //收不到短信验证码重新输入
     UIButton*repeatSMSBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    //UIButton*repeatSMSBtn = [[UIButton alloc]init];
     repeatSMSBtn.frame = CGRectMake(leftMargin+2*labelWidth+kMargin+80.f, upMargin+3*labelHeight+100.f+kMargin, labelWidth+50.f, labelHeight);
     [repeatSMSBtn setTitle:@"重新发送" forState:UIControlStateNormal];
     [repeatSMSBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [repeatSMSBtn setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
-
     [repeatSMSBtn addTarget:self action:@selector(CannotGetSMS:) forControlEvents:UIControlEventTouchUpInside];
     _repeatSMSBtn=repeatSMSBtn;
-     repeatSMSBtn.hidden=YES;
+    repeatSMSBtn.hidden=YES;
     [self.view addSubview:repeatSMSBtn];
     
     // 注册按钮
@@ -187,7 +186,6 @@ static int count = 0;
     [resign addTarget:self action:@selector(resign:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:resign];
     
-    
     // 收不到短信时提示的信息
     UILabel* hintLabel=[[UILabel alloc]init];
     hintLabel.frame=CGRectMake(([UIScreen mainScreen].bounds.size.width-labelWidth-200.f)*0.5, upMargin+4*labelHeight+135.f+2*kMargin, labelWidth+220.f, labelHeight-10.f);
@@ -197,14 +195,14 @@ static int count = 0;
     hintLabel.textColor=[UIColor redColor];
     _hintLable=hintLabel;
     [self.view addSubview:hintLabel];
-
+    
 }
 
 //重新发送验证码
 #pragma mark重新发送验证码
 -(void)CannotGetSMS:(UIButton*)sender{
     if (timeindex==0) {
-         timeindex++;
+        timeindex++;
     }
     
     NSString* str = [NSString stringWithFormat:@"%@:%@",@"我们将重新发送验证码短信到这个号码",_phone.text];
@@ -223,7 +221,7 @@ static int count = 0;
         //        UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入手机号或密码" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
         //        [alertView show];
     }
-
+    
 }
 
 #pragma mark 接收验证码中。。。（更新时间）
@@ -237,11 +235,11 @@ static int count = 0;
         return;
     }
     //NSLog(@"更新时间");
-
+    
     _getver.enabled=NO;
     _time.hidden=NO;
     _repeatSMSBtn.enabled =NO;
-    _hintLable.hidden=YES;
+    _hintLable.hidden=NO;
     self.time.text = [NSString stringWithFormat:@"%@%i%@",@"接收验证码中...",5-count,@"秒"];
     
 }
@@ -265,60 +263,32 @@ static int count = 0;
     if (_phone.text.length==0||_passwords.text.length==0||_name.text.length == 0) {
         UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入昵称，手机号或密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertView show];
-    }else if(_passwords.text.length<=5||_passwords.text.length>16){
+    }else if(_passwords.text.length< 6||_passwords.text.length>16){
         UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入长度不小🐟6位或长度不超过16位的密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertView show];
-        
     }else if(_SMSCode.text.length == 0){
         UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入验证码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertView show];
     }else if(_SMSCode.text.length != 4){
-         UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"验证码输入错误，请重新输入" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-         [alertView show];
-     }else{[SMSSDK commitVerificationCode:_SMSCode.text phoneNumber:_phone.text zone:@"86" result:^(NSError *error) {
-         
-            if([self checkTel:_phone.text]&&_passwords.text.length!=0){
-                [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:_name.text Account:_phone.text Password:_passwords.text];
-                if (!error) {
-                    NSLog(@"验证成功");
+        UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"验证码输入错误，请重新输入" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alertView show];
+    }else{[SMSSDK commitVerificationCode:_SMSCode.text phoneNumber:_phone.text zone:@"86" result:^(NSError *error) {
+        
+        if([self checkTel:_phone.text]&&_passwords.text.length!=0){
+            
+            [[NEUABNetworkMngTool sharedNetworkMngTool]userRegCleverName:_name.text Account:_phone.text Password:_passwords.text Result:^(NSString *flag) {
+                
+                if ([flag isEqualToString:@"Post_UserReg"]){
+                    
                     [MBProgressHUD showTipToWindow:@"注册成功"];
                     
                     [self performSegueWithIdentifier:@"tologon" sender:_phone.text];
-                } else {
-                    NSLog(@"错误码：%@",error.debugDescription);
-                    [MBProgressHUD showTipToWindow:@"验证码输入错误"];
                 }
-            }
-     }];}
-//        //PFUser *user = [PFUser user];
-//        user.username = _phone.text;
-//        user.password = _passwords.text;
-//        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//            if (!error) {
-//                [MBProgressHUD showTipToWindow:@"注册成功"];
-//                [self performSegueWithIdentifier:@"tologon" sender:_phone.text];
-//                
-//                //_risign.enabled = YES;
-//            } else {
-//                
-//                //Something bad has occurred
-//                NSString *errorString = [[error userInfo] objectForKey:@"error"];
-//                UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"注册失败" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-//                [errorAlertView show];
-//                //_risign.enabled = YES;
-//                [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-//            }
-//        }];
-//        
-//    
-//}else{
-//    [MBProgressHUD showTipToWindow:@"验证码错误"];
-//    [self.view endEditing:NO];
-
-
+            }];
+        }
+    }];}
+    
 }
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.destinationViewController isKindOfClass:[NEUABLogRegViewController class]]) {
         NEUABLogRegViewController *logon = segue.destinationViewController;
@@ -328,21 +298,21 @@ static int count = 0;
 
 #pragma mark获取验证码
 -(void)getvercode:(UIButton*)sender{
-
+    
     
     //NSLog(@"vercode");
     //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
     if (_name.text.length==0||_phone.text.length==0||_passwords.text.length==0) {
         UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入昵称，手机号或密码" delegate:nil cancelButtonTitle:@"确定"otherButtonTitles:nil, nil];
         [alertView show];
-
+        
     }
-     else if (_name.text.length!=0&&[self checkTel:_phone.text]&&_passwords.text.length!=0 ) {
+    else if (_name.text.length!=0&&[self checkTel:_phone.text]&&_passwords.text.length!=0 ) {
         [MBProgressHUD showTipToWindow:@"正在发送中"];
         [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:_phone.text zone:@"86" customIdentifier:nil result:^(NSError *error) {
             if (!error) {
                 NSLog(@"获取验证码成功");
-                                count = 0;
+                count = 0;
                 
                 NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:5
                                                                   target:self
@@ -362,15 +332,15 @@ static int count = 0;
             }
         }];
     }else{
-//        UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入手机号或密码" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
-//        [alertView show];
+        //        UIAlertView*alertView = [[UIAlertView alloc]initWithTitle:@"提示"message:@"请输入手机号或密码" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+        //        [alertView show];
     }
-
+    
 }
 
 #pragma mark 手机号验证
 -(BOOL)checkTel:(NSString *)str{
-  
+    
     NSString *regex = @"^((13[0-9])|(147)|(15[^4,\\D])|(18[0,5-9]))\\d{8}$";
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
     BOOL isMatch = [pred evaluateWithObject:str];

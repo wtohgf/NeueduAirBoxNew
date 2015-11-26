@@ -19,15 +19,18 @@
 
 #define GetinfoAPI @"http://10.25.246.172:8080/ServletProject/servlet/EquipmentIE"
 
+typedef void (^NetworkBlock)(NSString* flag);
+
 @interface NEUABNetworkMngTool : NSObject
+
 +(instancetype)sharedNetworkMngTool;
 
 //1.用户注册 POST
--(void)userRegCleverName:(NSString*)cleverName Account:(NSString*)account Password:(NSString*)password ;
+-(void)userRegCleverName:(NSString*)cleverName Account:(NSString*)account Password:(NSString*)password Result:(NetworkBlock) block;
 
 
 //2.用户登录 GET
--(void)userLogAccount:(NSString*)account Password:(NSString*)password ;
+-(void)userLogAccount:(NSString*)account Password:(NSString*)password Result:(NetworkBlock) block;
 
 //3.获取账号对应的设备列表
 -(void)GetequipNoAccount:(NSString*)account ;
